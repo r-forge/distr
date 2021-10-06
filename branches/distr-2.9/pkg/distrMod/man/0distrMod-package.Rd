@@ -247,7 +247,7 @@ Matthias Kohl \email{Matthias.Kohl@stamats.de}\cr
 M. Kohl and P. Ruckdeschel (2010):
 R Package distrMod: S4 Classes and Methods for Probability Models.
 Journal of Statistical Software, 35(10), 1-27.
-\url{https://www.jstatsoft.org/v35/i10/}
+\doi{10.18637/jss.v035.i10}
 (see also \code{vignette("distrMod")})
 P. Ruckdeschel, M. Kohl, T. Stabla, F. Camphausen (2006):
 S4 Classes for Distributions, \emph{R News}, \emph{6}(2), 2-6.

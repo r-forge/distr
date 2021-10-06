@@ -10,7 +10,9 @@
 ##############
 v 2.9
 ##############
+
 user-visible CHANGES:
++ replaced obsolete URLs to JSS papers by respective DOIs
   
 bug fixes
 + fixed a glitch in catching argument names in bAcDcLcDistribution.R 
