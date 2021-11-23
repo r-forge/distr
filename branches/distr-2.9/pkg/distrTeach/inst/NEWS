@@ -8,6 +8,17 @@
  information)
  
 ##############
+v 2.9
+##############
+
+user-visible CHANGES:
+
++ new S4 method for plotting summand distributions of class 
+  "UnivariateDistribution" (i.e., covering, e.g., mixtures 
+  of discrete and abs. cont distributions) -> then only
+  the cdfs for different numbers of summands are plotted
+
+##############
 v 2.8
 ##############
 

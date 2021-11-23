@@ -121,4 +121,28 @@ setMethod("plotCLT","AbscontDistribution", function(Tn,k, summands = "") {
                 par(mfrow = c(1,1), mar=oldmar)
        })
 
+setMethod("plotCLT","UnivariateDistribution", function(Tn,k, summands = "") {
+                N <- Norm()
+                x <- seq(-5,5,0.01)
+                oldmar <- par("mar",no.readonly = TRUE)
+                par(mfrow = c(1,1), mar = c(5.1,4.1,4.,2.1))
+                pn <- p(Tn)(x)
+                pN <- p(N)(x)
+                plot(x, pn, ylim = c(0, 1), type = "l", 
+                     ylab = gettext("cdfs"), main="",
+                     lwd = 4)
+                title(paste("Sample size", k),line=0.6)     
+                lines(x, pN, col = "orange", lwd = 2)
+                kd <- round(max(abs(pn-pN)),4)
+                text(1, 0.2, gettextf("Kolmogoroff-\nDistance:\n%1.4f",kd), 
+                     adj = 0, cex = 0.8)
+                legend("topleft", # x = -4.5, y = 1., 
+                      legend = c(expression(italic(L)(frac(S[n]-E(S[n]), 
+                                 sd(S[n])))), expression(italic(N)(0,1))), 
+                       cex = .8, bty = "n", col = c("black", "orange"), 
+                       lwd = c(4,2))
+                par(mfrow = c(1,1), mar=oldmar)
+       })
+
+
 

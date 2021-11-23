@@ -3,6 +3,7 @@
 \alias{plotCLT-methods}
 \alias{plotCLT,AbscontDistribution-method}
 \alias{plotCLT,DiscreteDistribution-method}
+\alias{plotCLT,UnivariateDistribution-method}
 
 \title{Generic Plot Function for Illustrating the CLT}
 \description{Generic 'plot' function for generating the plots of 'illustrateCLT'.}
@@ -10,6 +11,7 @@
 \usage{plotCLT(Tn, ...)
 \S4method{plotCLT}{AbscontDistribution}(Tn, k, summands="")
 \S4method{plotCLT}{DiscreteDistribution}(Tn, k, summands="")
+\S4method{plotCLT}{UnivariateDistribution}(Tn, k, summands="")
 }
 \arguments{
   \item{Tn}{object of class \code{"AbscontDistribution"} or class
