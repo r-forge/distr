@@ -17,6 +17,12 @@ user-visible CHANGES:
 bug fixes
 + fixed a glitch in catching argument names in bAcDcLcDistribution.R 
   detected by Elio Campitelli <elio.campitelli@cima.fcen.uba.ar>
++ fixed some error in distributional arithmetics brought up by Andrew Robinson <apro@unimelb.edu.au>
+    to produce meaningful error messages we had code that tried to deparse operands in operations
+	with restricted definition domains like "/", "^"; it turned our that our idea to catch errors
+	in this deparsing within a try()-catch did not work any longer when called from within a function; 
+	as way out, we now have code which no longer needs the try()-catch and instead climbs up the 
+	parsing tree and searches for the first occurrence of "/" resp. "^" and deparses this
 
 under the hood:
 + triggered by an email by Santhosh V <Santhosh.V@se.com>, we added a patch to be more careful when producing
