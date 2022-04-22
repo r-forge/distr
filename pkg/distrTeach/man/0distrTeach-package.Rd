@@ -20,8 +20,8 @@ as well as a Tcl/Tk based demo for\code{illustrateCLT}
 \details{
 \tabular{ll}{
 Package: \tab distrTeach \cr
-Version: \tab 2.8.0 \cr
-Date: \tab 2019-03-12 \cr
+Version: \tab 2.8.1 \cr
+Date: \tab 2022-04-22 \cr
 Depends: \tab R(>= 3.4), methods, distr(>= 2.2), distrEx(>= 2.2) \cr
 Suggests: \tab tcltk\cr
 Imports: \tab startupmsg, grDevices, graphics, stats\cr
@@ -96,7 +96,7 @@ Note: The first two numbers of package versions do not necessarily reflect
 Matthias Kohl \email{Matthias.Kohl@stamats.de} and \cr
 Peter Ruckdeschel \email{peter.ruckdeschel@uni-oldenburg.de},\cr 
 Eleonara Feist \email{eleonoragerber@gmx.de}, and, \cr
-Anja Hueller \email{anja\_h86@web.de}\cr  
+Anja Hueller \cr  
 
 \emph{Maintainer:}  Peter Ruckdeschel \email{peter.ruckdeschel@uni-oldenburg.de}
 }
@@ -113,11 +113,11 @@ and \pkg{distrTeach} is included into the mere documentation package \pkg{distrD
 and may be called by \code{require("distrDoc");vignette("distr")}
 
 a homepage to this package is available under\cr
-\url{http://distr.r-forge.r-project.org/} and the pages ...
+\url{https://distr.r-forge.r-project.org/} and the pages ...
 
 M. Kohl (2005): \emph{Numerical Contributions to the Asymptotic 
 Theory of Robustness.} PhD Thesis. Bayreuth. Available as 
-\url{http://www.stamats.de/wp-content/uploads/2018/04/ThesisMKohl.pdf}
+\url{https://www.stamats.de/wp-content/uploads/2018/04/ThesisMKohl.pdf}
 }
 \keyword{package}
 \concept{LLN}
