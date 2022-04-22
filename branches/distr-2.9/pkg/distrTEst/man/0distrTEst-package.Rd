@@ -23,7 +23,7 @@ Imports: \tab startupmsg, utils \cr
 Suggests: \tab distrEx(>= 2.8.0) \cr
 LazyLoad: \tab yes \cr
 License: \tab LGPL-3 \cr
-URL: \tab http://distr.r-forge.r-project.org/\cr
+URL: \tab https://distr.r-forge.r-project.org/\cr
 VCS/SVNRevision: \tab 1324 \cr
 }}
 \section{Classes}{
@@ -106,7 +106,7 @@ is included into the mere documentation package \pkg{distrDoc} and may be called
 \code{require("distrDoc");vignette("distr")}.
 
 A homepage to this package is available under\cr
-\url{http://distr.r-forge.r-project.org/}
+\url{https://distr.r-forge.r-project.org/}
 }
 
 \keyword{ package }

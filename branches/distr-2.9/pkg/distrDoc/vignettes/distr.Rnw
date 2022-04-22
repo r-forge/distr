@@ -3646,7 +3646,7 @@ standard {R} code.
 \newblock In: Hornik K., Leisch F. and Zeileis A. (Eds.) {\em
   Proceedings of the 3rd International Workshop on Distributed Statistical
   Computing (DSC 2003)\/}. Vienna, Austria.
-\newblock Published as http://www.ci.tuwien.ac.at/Conferences/DSC-2003/
+%\newblock Published as https://www.ci.tuwien.ac.at/Conferences/DSC-2003/
 
 \bibitem{Cham:98}
 Chambers J.M.  (1998):
@@ -3658,13 +3658,13 @@ Chambers J.M.  (1998):
 Gentleman R. (2003):
 \newblock {\em Object Orientated Programming. Slides of a Short Course held in 
 Auckland\/}.
-\newblock http://www.stat.auckland.ac.nz/S-Workshop/Gentleman/Methods.pdf
+\newblock https://www.stat.auckland.ac.nz/S-Workshop/Gentleman/Methods.pdf
 
 \bibitem{MK:05}
 Kohl M.  (2005):
 \newblock {\em Numerical Contributions to the Asymptotic Theory of Robustness\/}. 
 \newblock {Dissertation}, Universit\"at Bayreuth. 
-\newblock See also http://stamats.de/ThesisMKohl.pdf
+\newblock See also https://www.stamats.de/wp-content/uploads/2018/04/ThesisMKohl.pdf
 
 \bibitem{K:R:S:04}
 Ruckdeschel P. and Kohl, M. (2014):

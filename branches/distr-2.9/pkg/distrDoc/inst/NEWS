@@ -13,6 +13,7 @@ v 2.9
 
 user-visible CHANGES:
 + replaced obsolete URLs to JSS papers by respective DOIs
++ fixed some broken URLs and changed URLs from http to https where possible
 
 
 ##############

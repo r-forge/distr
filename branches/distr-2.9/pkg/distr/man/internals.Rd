@@ -381,7 +381,7 @@ produces the prime function as a function.
 classes \code{DiscreteDistribution} and \code{AbscontDistribution} for 
 one-sided truncation, using (for slot \code{r}) Peter Dalgaard's clever 
 log-tricks as indicated in 
-\url{http://r.789695.n4.nabble.com/help-on-sampling-from-the-truncated-normal-gamma-distribution-on-the-far-end-probability-is-very-low-td868119.html#a868120}.
+\url{https://www.mail-archive.com/r-help@r-project.org/msg32097.html}.
 
 \code{.modifyqgaps} modifies slot \code{q} for objects of class 
      \code{AbscontDistribution} in the presence of gaps, i.e.; if slot

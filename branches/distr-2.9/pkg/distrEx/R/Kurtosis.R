@@ -152,7 +152,7 @@ setMethod("kurtosis", signature(x = "DExp"),
     else
         return(3)
     })
-### source http://mathworld.wolfram.com/LaplaceDistribution.html
+### source https://mathworld.wolfram.com/LaplaceDistribution.html
 
 #
 setMethod("kurtosis", signature(x = "Exp"),
@@ -167,7 +167,7 @@ setMethod("kurtosis", signature(x = "Exp"),
     else
         return(6)
     })
- ### source http://mathworld.wolfram.com/ExponentialDistribution.html
+ ### source https://mathworld.wolfram.com/ExponentialDistribution.html
 
 #
 setMethod("kurtosis", signature(x = "Fd"),

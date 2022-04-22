@@ -34,7 +34,7 @@ Imports: \tab startupmsg, utils, stats \cr
 Suggests:  \tab tcltk \cr
 LazyLoad: \tab yes \cr
 License: \tab LGPL-3 \cr
-URL: \tab http://distr.r-forge.r-project.org/\cr
+URL: \tab https://distr.r-forge.r-project.org/\cr
 VCS/SVNRevision: \tab 1324 \cr
 }
 }
@@ -231,11 +231,11 @@ and \pkg{distrEx} is included into the mere documentation package \pkg{distrDoc}
 and may be called by \code{require("distrDoc");vignette("distr")}
 
 a homepage to this package is available under\cr
-\url{http://distr.r-forge.r-project.org/}
+\url{https://distr.r-forge.r-project.org/}
 
 M. Kohl (2005): \emph{Numerical Contributions to the Asymptotic 
 Theory of Robustness.} PhD Thesis. Bayreuth. Available as 
-\url{http://www.stamats.de/wp-content/uploads/2018/04/ThesisMKohl.pdf}
+\url{https://www.stamats.de/wp-content/uploads/2018/04/ThesisMKohl.pdf}
 }
 \keyword{package}
 \concept{S4 condition class}

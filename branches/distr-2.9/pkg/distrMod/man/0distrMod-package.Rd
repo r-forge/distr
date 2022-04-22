@@ -21,7 +21,7 @@ Suggests: \tab ismev, evd, \cr
 Enhances: RobExtremes\cr
 ByteCompile: \tab yes \cr
 License: \tab LGPL-3 \cr
-URL: \tab http://distr.r-forge.r-project.org/\cr
+URL: \tab https://distr.r-forge.r-project.org/\cr
 VCS/SVNRevision: \tab 1344 \cr
 }}
 \section{Classes}{

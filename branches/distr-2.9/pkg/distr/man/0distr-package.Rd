@@ -58,7 +58,7 @@ Suggests: \tab distrEx, svUnit (>= 0.7-11), knitr \cr
 Imports: \tab stats, grDevices, utils, MASS \cr
 LazyLoad: \tab yes \cr
 License: \tab LGPL-3 \cr
-URL: \tab http://distr.r-forge.r-project.org/\cr
+URL: \tab https://distr.r-forge.r-project.org/\cr
 VCS/SVNRevision: \tab 1324 \cr
 }}
 
@@ -363,7 +363,7 @@ and may be called by
 %\url{http://www.uni-bayreuth.de/departments/math/org/mathe7/DISTR/distr.pdf}
 
 a homepage to this package is available under\cr
-\url{http://distr.r-forge.r-project.org/}
+\url{https://distr.r-forge.r-project.org/}
 
 }
 

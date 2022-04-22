@@ -15,6 +15,7 @@ user-visible CHANGES:
 + replaced obsolete URLs to JSS papers by respective DOIs
 
 under the hood:
++ fixed some broken URLs and changed URLs from http to https where possible
 
 ##############
 v 2.8.4

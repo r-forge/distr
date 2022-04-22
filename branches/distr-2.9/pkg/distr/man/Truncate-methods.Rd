@@ -36,7 +36,7 @@ and if either there is only one-sided truncation or both truncation
 points lie on the same side of the median, we use this representation
 to enhance the range of applicability, in particular, for slot \code{r},
 we profit from Peter Dalgaard's clever log-tricks as indicated in 
-\url{http://r.789695.n4.nabble.com/help-on-sampling-from-the-truncated-normal-gamma-distribution-on-the-far-end-probability-is-very-low-td868119.html#a868120}. To this
+\url{https://www.mail-archive.com/r-help@r-project.org/msg32097.html}. To this
 end we use the internal functions
 (i.e.; non exported to namespace) \code{\link{.trunc.up}} and
 \code{\link{.trunc.low}} which provide functional slots \code{r,d,p,q} for 

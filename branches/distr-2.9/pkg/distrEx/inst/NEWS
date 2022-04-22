@@ -22,6 +22,7 @@ user-visible CHANGES:
 under the hood:
 +  KolmogorovDist methods gain argument "..." in order to enable them to
    digest argument validity.check in MCEstimator 
++ fixed some broken URLs and changed URLs from http to https where possible
    
 ##############
 v 2.8
