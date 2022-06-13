@@ -18,6 +18,12 @@ under the hood:
 + fixed some broken URLs and changed URLs from http to https where possible
 
 ##############
+v 2.8.5
+##############
+under the hood:
++ in reply to request by K. Horning 20220613, changed help to confint-methods, no longer using \value{...}
+
+##############
 v 2.8.4
 ##############
 under the hood:
