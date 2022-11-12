@@ -11,8 +11,6 @@
 v 2.9
 ##############
 
-under the hood:
-+ fixed some broken URLs and changed URLs from http to https where possible
 
 ##############
 v 2.8
@@ -24,7 +22,10 @@ user-visible CHANGES:
   information needed to produce the respective plot, which at a later stage could be used by different graphic engines (like, e.g. 
   \code{ggplot}) to produce the plot in a different framework. A more detailed description will follow in a subsequent version.
 + DESCRIPTION tag SVNRevision changed to VCS/SVNRevision
- 
+
+under the hood:
++ fixed some broken URLs and changed URLs from http to https where possible
++ clean up in examples: files written to are unlinked at end of examples
  
 ##############
 v 2.7
