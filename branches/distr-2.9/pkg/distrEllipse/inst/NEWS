@@ -11,8 +11,6 @@
 v 2.9
 ##############
 
-under the hood:
-+ fixed some broken URLs and changed URLs from http to https where possible
 
 ##############
 v 2.8
@@ -29,6 +27,9 @@ under the hood:
   (like E()-methods in distrEx v 2.8.0)
 + E methods for MultivarMixingDistribution if (diagnostic==TRUE) return 
   diagnostic attributes of S3 class  "DiagnosticClass"
+
+under the hood:
++ fixed some broken URLs and changed URLs from http to https where possible
 
 ##############
 v 2.7
