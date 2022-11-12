@@ -1,3 +1,11 @@
+This is a resubmit after having fixed a reverse dependency issue --
+<https://win-builder.r-project.org/incoming_pretest/distr_2.9.0_20221112_175501/reverseDependencies/summary.txt>
+
+During our first attempt to submit the package to CRAN a reverse dependency check against pkg distrEllipse revealed that our new code 
+checking for an appearance of "/" and "^" in the parsing tree could give paste()-results of length > 1... is fixed now...
+
+Original comment:
+
 This release is triggered by a mail from CRAN/Kurt Hornik 2022-11-07, drawing our attention to some flaws in the HTML versions of our manuals, detected by the most recent version of R CMD check.  These flaws are fixed, together with some updated URLs; in addition, we fix some glitches detected by  elio.campitelli@cima.fcen.uba.ar,
 apro@unimelb.edu.au, Santhosh.V@se.com, and vmilchev@uni-koeln.de. For details as to these changes, see the NEWS file to our package.
 
