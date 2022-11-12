@@ -1,0 +1,8 @@
+This release is triggered by a mail from CRAN/Kurt Hornik 2022-11-07, drawing our attention to some flaws in the HTML versions of our manuals, detected by the most recent version of R CMD check.  These flaws are fixed, together with some updated URLs; in addition, we fix some glitches detected by  elio.campitelli@cima.fcen.uba.ar,
+apro@unimelb.edu.au, Santhosh.V@se.com, and vmilchev@uni-koeln.de. For details as to these changes, see the NEWS file to our package.
+
+Before submitting, we went through winbuilder on r-release and r-devel, r-oldrelease, without any NOTES in the summary. 
+
+This is our first release built under R>=4.2 and the new tool chain on windows, i.e., rtools42, only building a 64bit version, so there do appear some minor differences when checking differences from 'distr-Ex.Rout' to 'distr-Ex.Rout.save' which we think should be ignored though (and are according to R CMD check --as-cran).
+
+Best, Peter

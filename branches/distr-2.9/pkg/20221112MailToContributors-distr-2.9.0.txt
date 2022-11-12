@@ -1,0 +1,42 @@
+To: Elio Campitelli <elio.campitelli@cima.fcen.uba.ar>,
+    Andrew Robinson <apro@unimelb.edu.au>,
+	Santhosh V <Santhosh.V@se.com>,
+	Vlada Milchevskaya <vmilchev@uni-koeln.de>
+	
+subject: distr-2.9.0 is on its way to CRAN -- thank you!
+
+Dear Elio, Andrew, Santosh, and Vlada,
+
+[in chronological order of your contributions]
+
+This is to notify you that we have just released to CRAN a new version
+of our R package distr and to thank you for helping us in improving
+our package. 
+
+The actual CRAN release is triggered by some mail from CRAN/Kurt Hornik 
+2022-11-07, complaining about some flaws in the HTML versions of our 
+manuals, detected by the most recent version of R CMD check. 
+
+These flaws are fixed, together with some updated URLs.
+
+More importantly, we want to explicitely thank you for your contributions 
+which have finally found their way to a CRAN release:
+
++ Elio Campitelli <elio.campitelli@cima.fcen.uba.ar> drew our attention to
+  a glitch in catching argument names in bAcDcLcDistribution.R
++ Andrew Robinson <apro@unimelb.edu.au> brought up some error in 
+  distributional arithmetics: To produce meaningful error messages we had 
+  code that tried to deparse operands in operations with restricted 
+  definition domains like "/", "^"; it turned our that our idea to 
+  catch errorsin this deparsing within a try()-catch did not work 
+  any longer when called from within a function; as way out, we now 
+  have code which no longer needs the try()-catch and instead climbs 
+  up the parsing tree and searches for the first occurrence of "/" 
+  resp. "^" and deparses this
++ Santhosh V <Santhosh.V@se.com> detected some glitch when producing
+  slot q for compound and mixing distributions  
++ Vlada Milchevskaya <vmilchev@uni-koeln.de> pointed us to the case
+  for CompoundDistribution() that argument NumbOfSummandsDistr is a 
+  Dirac distribution which needed special treatment
+
+Best regards, Peter 
