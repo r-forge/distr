@@ -36,7 +36,7 @@ and if either there is only one-sided truncation or both truncation
 points lie on the same side of the median, we use this representation
 to enhance the range of applicability, in particular, for slot \code{r},
 we profit from Peter Dalgaard's clever log-tricks as indicated in 
-\url{https://www.mail-archive.com/r-help@r-project.org/msg32097.html}. To this
+\url{https://stat.ethz.ch/pipermail/r-help/2008-September/174321.html}. To this
 end we use the internal functions
 (i.e.; non exported to namespace) \code{\link{.trunc.up}} and
 \code{\link{.trunc.low}} which provide functional slots \code{r,d,p,q} for 

@@ -1,0 +1,259 @@
+Hier die gebündelten Release News / mit -> markiert die Punkte,
+ die seit letzter Woche dazu  gekommen sind 
+
+%----------------------------------------------------------------------
+[distr]
+%----------------------------------------------------------------------
+
+user-visible CHANGES:
++ DESCRIPTION tag SVNRevision changed to VCS/SVNRevision
++ plot methods now return an S3 object of class \code{c("plotInfo","DiagnInfo")}, i.e., a list containing the 
+  information needed to produce the respective plot, which at a later stage could be used by different graphic engines (like, e.g. 
+  \code{ggplot}) to produce the plot in a different framework. A more detailed description will follow in a subsequent version.
++ accessor & replacer for prob, GeomParameter are finally Defunct
++ liesInSupport gains an argument checkFin; in case of DiscreteDistributions, it tries to use 
+  additional information from internal slot .finSupport, and e.g. if there is a lattice.  
++ liesInSupport now also is available for UnivarLebDecDistribution, LatticeDistribution, and UnivarMixingDistribution
+
+under the hood:
++ DiscreteDistribution(s) gain a logical slot .finSupport to better control whether the 
+  "true" support (not the possibly truncated one in slot support) is infinite (more precisely
+  it is of length 2 -- first coordinate if the lower bound of the support is finite, second if 
+  the upper bound is finite)
+
+%----------------------------------------------------------------------
+[distrEx]
+%----------------------------------------------------------------------
+
+user-visible CHANGES:
++ DESCRIPTION tag SVNRevision changed to VCS/SVNRevision
+
+under the hood:
+->+ moved quantile integration methods for expectation for Weibull and
+  Gamma distribution from pkg RobExtremes to distrEx 
+->+ introduce exported helper function .qtlIntegrate  to achieve this
+  (is reused in RobExtremes for the GEV methods there)
+->+ cleaned .Rd file E.Rd: It contained still some references to methods
+  for extreme value distributions which are now in RobExtremes
+  and some old mail reference peter.ruckdeschel@uni-bayreuth.de
+
+user-visible CHANGES:
++ DESCRIPTION tag SVNRevision changed to VCS/SVNRevision
+
+under the hood:
+->+ moved quantile integration methods for expectation for Weibull and
+  Gamma distribution from pkg RobExtremes to distrEx 
+->+ introduce exported helper function .qtlIntegrate  to achieve this
+  (is reused in RobExtremes for the GEV methods there)
+->+ cleaned .Rd file E.Rd: It contained still some references to methods
+  for extreme value distributions which are now in RobExtremes
+  and some old mail reference peter.ruckdeschel@uni-bayreuth.de
+->+ DiscreteMVDistribution gains a (matrix valued) slot .FinSupport in analogy to the 
+  univariate DiscreteDistribution (idea: coordinatewise checking whether a multivariate 
+   observation could, in principle, lie in the support -- the 1st row states
+   whether the ith marginal distribution has a finite left endpoint, and the
+   2nd row if it is has a finite right endpoint); not yet further used
+->+ for consistency to the univariate methods, the liesInSupport() method for
+  DiscreteMVDistribution gains an argument checkFin, which is not yet used.
+
+  
+%----------------------------------------------------------------------
+[distrMod]
+%----------------------------------------------------------------------
+
+-> + require more recent versions of distr, distrEx
++ plot methods now return an S3 object of class \code{c("plotInfo","DiagnInfo")}, i.e., a list containing the 
+  information needed to produce the respective plot, which at a later stage could be used by different graphic engines (like, e.g. 
+  \code{ggplot}) to produce the plot in a different framework. A more detailed description will follow in a subsequent version.
++ DESCRIPTION tag SVNRevision changed to VCS/SVNRevision
++ "cleverer parsing of dots" in M[L,C,D]Estimator:
+  Triggered by an error observed by Kornelius Rohmeyer, we now parse the dots (...) argument 
+  of M[L,C,D]Estimator a  little more closely and filter out obvious clashes: We filter out taboo arguments 
+  (causing clashes with formals in optim/optimize and calling arguments); from the remaining ones only 
+  [exactly] _named_ arguments of the optimizer (optim/optimize) and those matching either exactly arguments 
+  of the criterion or all remaining ones (if ... is a formal of the criterion) are passed on: 
+  This way, one can, if desired, do evaluation-wise validity checks in the criterion. 
++ For diagnostic purposes, MCEstimate-class gains a slot optimReturn (of class "ANY" and filled by
+  NULL by default) which is filled by the return value of the optimizer in "mceCalc" -- it has a
+  corresponding accessor
+->+ distinguish three cases for CvMMDEstimator selected by  argument muDatOrMod = c("Dat","Mod", "Other"):
+  in case "Dat", mu = emp. cdf (default), in case "Mod", mu = current best fit model distribution,
+  and in case "Other" one has to supply an integration  probability mu. 
+  => consistency between estimate and asyCov
+->+ added some theory/references to help file to MD estimators
+->+ the L2derivatives of the SimpleL2ParamFamilies and the L2GroupFamilies now respect 
+  restrictions in the support of the underlying distribution: the L2derivatives are 0
+  whenever the argument x has liesInSupport(distribution,x) == FALSE
+->+ new model class / generator LogisticLocationScaleFamily
+  
+bug fixes
+->+ discovered some issues with local variables in L2Families (global values were used instead...)  
+->+ default for asCov of CvMMDEstimator was inconsistent: the estimator was using emp.cdf, but
+  the asyCov was using mu the current best fit model distribution 
+->+ in the wrappers to MDEstimator: CvMMDEstimator, KolmogorovMDEstimator, TotalVarMDEstimator, 
+  HellingerMDEstimator, we had the "wrong" call in slot estimate.call
+->+ show-method for ParamWithShapeFamParameter and MCEstimate did unnecessary casting to superclasses
+  hence hid the true class
+->+ argument distance did not show it came from CvMDist, CvMDist2 via CvMMDEstiamtor when unparsed -- 
+  now the unparsed argument in CvMMDEstimator is called CvMDist0 so shows that it is related to 
+  CvMDist 
+  
+under the hood:
+
++ As this is more for internal purposes, example code for the parsing of dots argument 
+  is in lines ll 275--334 in mleCalc-methods.R (wrapped in a if(FALSE){ }).
+->+ in code in SimpleL2ParamFamilies.R: 
+   + param.0 denotes the local current parameter of the L2Family  
+   + param is used as function argument
+   + <paramname>.0 is used in .fct - functions as local variant (intern to fct) of the current parameter
+   + in the substituted L2deriv.fct, we use <paramname>.1 which is substituted for <paramname>.0
+   + in case <paramname>.0 is already used otherwise (as in NbinomMeanSizeFamily) we use <paramname>.00 instead
+->+ replaced integration for AbscontDistribution(s) in .CvMMDCovariance by integration on quantile scale
+   => CvMMDEstimator now works with variances even for Gamma distributions for shape < 1 ...   
+->+ .process.meCalcRes gains arg "x" to be able to pass on emp.CDF for mu in CvMMDEstimator
+   if arg asvar.fct of MCEstimator has "x" in formals the observations x are passed on to asvar.fct, 
+   otherwise they are not; correspondingly "x" is passed on to .process.meCalcRes in
+   MCEstimator(), MDEstimator(), MLEstimator(). 
+-> + old .CvMMDCovariance() becomes .oldCvMMDCovariance
+-> + new wrapper CvMDist2 which by default uses model distribution as mu
++ CvMMDEstimator gains argument muDatOrMod = c("Dat","Mod") to distinguish two cases
+-> + moved code to .[old]CvMMDCovariance from 0distrModUtils.R to new file asCvMVarianceQtl.R
+-> + some fiddeling with the names of MCEstimators: 
+  all functions MDEstimator, CvMMDEstimator, KolmogorovMDEstimator, TotalVarMDEstimator, 
+  HellingerMDEstimator, MLEstimator, MCEstimator gain an extra argument nmsffx for 
+  potential suffices to be appended to the estimator name. 
+->+ in MDEstimator with Cramer von Mises distance in case 
+    * distance == CvMDist   && !is.null(mu) -> "( mu = <muname> )"
+    * distance == CvMDist   && is.null(mu)  -> "( mu = emp. cdf )"
+    * distance == CvMDist2                  -> "( mu = model distr. )"
+  is appended to the default estimator name 
+->+ similarly in wrapper CvMMDEstimator in case  argument 'muDatOrMod' is matched to 
+  * muDatOrMod=="Dat"   -> "( mu = emp. cdf )"
+  * muDatOrMod=="Mod"   -> "( mu = model distr. )"
+  * muDatOrMod=="Other" -> "( mu = <muname> )"
+  is appended to the default estimator name 
+->+ based on this tag "( mu = ... )" later on, in pkg RobAStBase, a (conditional) 
+  coerce method produces the pIC of the MDE by means of .CvMMDCovariance[WithMux]
+->+ new subclasses "MLEstimate", "MDEstimate", "CvMMDEstimate" for internal method dispatch  
+  
+  
+%----------------------------------------------------------------------
+[distrDoc]
+%----------------------------------------------------------------------
+
+->+ DESCRIPTION tag SVNRevision changed to VCS/SVNRevision
+->+ mention the more refined version of liesInSupport in the vignette 
+
+%----------------------------------------------------------------------
+[RandVar]
+%----------------------------------------------------------------------
+
+user-visible CHANGES:
+->+ require more recent distr/distrEx versions
+
+under the hood:
+->+ for consistency to the univariate methods, the liesInSupport() method for
+  DiscreteMVDistribution is called with an extra argument checkFin, 
+  which is not yet used.
+
+%----------------------------------------------------------------------
+[RobAStBase]
+%----------------------------------------------------------------------
+user-visible CHANGES:
+-> + slot function modifyIC of the different IC classes gains
+  an argument withMakeIC to be able to adjust this to a
+  higher granularity
+->+ updated required package versions in DESCRIPTION  
+
+bugfixes  
+->+ and a forgotten no longer used instance of oldmodif in kStepEstimator
+
+under the hood
+-> + new S4 (estimator) class "MCALEstimate" containing both 
+  "MCEstimate" and "ALEstimate" to make accessible pIC-methods
+  to CvMMDEstimators...
+-> + some unnecessary coercions (with informatino loss) in show methods
+-> + new .checkEstClassForParamFamily method to force (expost)
+      casting to MCALEstimate (with pIC)
+-> + to speed up things slot pIC is filled with a promise only 
+  which is only forced when called through accessor pIC 
+  (and then the slot is filled with the actual pIC)
+-> + technically this is realized by a slot pIC of 
+  class OptionalInfluenceCurveOrCall  
+-> + internal function .getPIC is the workhorse: it takes the 
+  estimator evaluates its argument ParamFamily from slot estimate.call
+  and moves it to the parameter value which was estimated;
+  at this parameter value, the IC is constructed 
+-> + new internal helper method getPIC to get hand on the pIC 
+  --> for MLE it computes it by optIC  
+  --> for CvMMDEstimators -- it uses the name of the estimator; 
+  more specifically it relies on tag
+  * "( mu = emp. cdf )" => this uses .CvMMDCovarianceWithMux
+  * "( mu = model distr. )" => this uses .CvMMDCovariance with no argument mu
+  * "( mu = <muname> )" => this uses .CvMMDCovariance with argument mu
+  to get the pIC  
+-> + force optimal ICs to respect the support of the model distribution
+-> + less use of RandVar infrastructure in generateIC.fct to gain speed     
+-> + in kStepEstimator got back from RandVar-evaluation to IC - evaluation
+  background: updates should be fast (I saw examples with 60s for 3step...
+  with fast LMs...) -> to this end: 
+  (a) (for internal purposes) introduce new intermediate S4 class ".fastIC" 
+      (with non-exported generator .fastIC in file combinedICs.R) which is 
+      inbetween class IC and HampIC and has a new slot ".fastFct".
+      ".fastFct" is an optional (= can be NULL) mere function in one argument 
+      which returns the vector-valued IC; this way coordinatewise repeated 
+      checking whether x is in support of distr (and evaluation of the weight) 
+      can be avoided
+  (b) new slot ".fastFct" is filled automatically for our Hamepl-type 
+      ICs in generators ContIC and TotalVarIC by analogue generateIC.fast.fct
+      to generateIC.fct in file generateICfct.R. 
+  (c) class .fastIC is intermediate as we need it, too, for non-Hampel type ICs
+      as arise when either the covariance of our opt-rob IC is singular or 
+      one works with pICs and has to reconstruct full ICs by filling the parts
+      in the orthogonal complement of Range IC; 
+  (d) to this last issue instead of adding two random variables, as was done 
+      beforehand in kStepEstimator, one uses the new helper function combineOrthPICs
+      in file combinedICs.R which combines (without checking orthogonality) two
+      pICs to one full IC by adding the curves (and the fast functions). 
+  (e) in kStepEstimator, we now use evalIC.v, a (sapply-)vectorized version
+      of evalIC; this is an exported method and has a particular method for
+      class ".fastIC" which uses slot ".fastFct" instead of the evaluation 
+      of the pIC through evalRandVar ...
+  (f) generateIC.fct has also been revised: it avoids using random variable
+      Y(x)/Yi(x) and instead computes them right away from Lambda;
+	  this also has as background that checkIC/makeIC should be enhanced;
+	  ultimately, this enhancement is passed to ROptEst -- idea is to
+	  reuse infrastructure from getInfStand getInfCent which automatically
+	  does symmetry checking ...
+
+%----------------------------------------------------------------------
+[ROptEst]
+%----------------------------------------------------------------------
+
+user-visible CHANGES:
+-> + slot function modifyIC of the different IC classes gains
+  an argument withMakeIC to be able to adjust this to a
+  higher granularity
+-> + require more recent versions in DESCRIPTION
+
+under the hood
+
+-> + L2LocationFamily, L2LocationScaleFamily, and L2LocationScaleFamily gain methods for interpolRisk
+  ~> speed up is prepared (only need to store the reference LMs in sysdata.rda) 
+  => due to affine equivariance, we only have to store one set of LM's 
+-> + comparePlot has a try catch now for MBRE
+-> + some buglets in getStartIC 
+-> + some tedious debugging in getStartIClcsc.R
+-> + clarified if clauses in roptest.new (and removed .with.checkEstClassForParamFamily from dots to be sure)
+
+%----------------------------------------------------------------------
+[RobExtremes]
+%----------------------------------------------------------------------
+
+under the hood
++ moved quantile integration methods for expectation for Weibull and
+  Gamma distribution to pkg distrEx (>= 2.8.0)
++ made a helper function .qtlIntegrate out of existing code in 
+  RobExtremes 1.1.0  and moved it to distrEx where it is exported
+  from version 2.8.0; it is reused in RobExtremes for the GEV methods 
+		
