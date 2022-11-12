@@ -293,7 +293,7 @@ Zs
 @
 \par
 \begin{small}
-In the environments of \texttt{RStudio}, see \url{https://www.rstudio.com/} and
+In the environments of \texttt{RStudio}, see \url{https://posit.co} and
 \texttt{Jupyter IRKernel}, see \url{https://github.com/IRkernel/IRkernel},
 calls to \code{q} are caught away from standard {\sf R} evaluation and are treated
 in a non-standard way. This non-standard evaluation in particular throws
