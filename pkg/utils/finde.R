@@ -31,6 +31,7 @@ finde(x="\\(CLT-based\\) confidence interval", dir ="C:/rtest/distr/pkg/", rec=T
 finde(x="http\\:/", dir ="C:/rtest/distr/branches/distr-2.7/pkg/distr/", rec=TRUE)
 #finde(x="Wow6432Node", dir ="C:/R/devel/src/gnuwin32", rec=TRUE, ext="")
 finde(x="omega", dir ="C:/rtest/distr/branches/distr-2.7/pkg/distrMod/", rec=TRUE)
+finde(x="http\\:", dir ="C:/rtest/distr/branches/distr-2.9/pkg/distr/", rec=TRUE)
 
 #finde(x="getPos", dir ="C:/rtest/distr/branches/distr-2.4/pkg/distrMod/", rec=TRUE)
 finde(x="roptest\\(", dir ="C:/rtest/robast/branches/robast-0.9/pkg/ROptEst/", rec=TRUE)
