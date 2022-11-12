@@ -110,7 +110,7 @@ function(e1,e2){
     i <- i + 1
 	trcall <- sys.call(sys.parent(i))
     myc <- paste(as.list(trcall)[[1]])
-	if(myc=="/"){
+	if(any(myc == "/")){
 	   e2s <- as.character(deparse(match.call(call=trcall)$e2))
 	   stopit <- TRUE
 	}
@@ -181,7 +181,7 @@ function(e1,e2){
     i <- i + 1
 	trcall <- sys.call(sys.parent(i))
     myc <- paste(as.list(trcall)[[1]])
-	if(myc=="/"){
+	if(any(myc == "/")){
 	   e2s <- as.character(deparse(match.call(call=trcall)$e2))
 	   stopit <- TRUE
 	}
@@ -300,7 +300,7 @@ function(e1,e2){
     i <- i + 1
 	trcall <- sys.call(sys.parent(i))
     myc <- paste(as.list(trcall)[[1]])
-	if(myc=="^"){
+	if(any(myc == "^")){
 	   mc <- match.call(call=trcall)
 	   e1s <- as.character(deparse(mc$e1))
 	   e2s <- as.character(deparse(mc$e2))
@@ -398,7 +398,7 @@ function(e1,e2){
     i <- i + 1
 	trcall <- sys.call(sys.parent(i))
     myc <- paste(as.list(trcall)[[1]])
-	if(myc=="/"){
+	if(any(myc == "/")){
 	   mc <- match.call(call=trcall)
 	   e1s <- as.character(deparse(mc$e1))
 	   e2s <- as.character(deparse(mc$e2))
@@ -491,7 +491,7 @@ function(e1,e2){
     i <- i + 1
 	trcall <- sys.call(sys.parent(i))
     myc <- paste(as.list(trcall)[[1]])
-	if(myc=="^"){
+	if(any(myc == "^")){
 	   mc <- match.call(call=trcall)
 	   e1s <- as.character(deparse(mc$e1))
 	   e2s <- as.character(deparse(mc$e2))

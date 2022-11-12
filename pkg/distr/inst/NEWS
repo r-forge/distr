@@ -23,6 +23,9 @@ bug fixes
 	in this deparsing within a try()-catch did not work any longer when called from within a function; 
 	as way out, we now have code which no longer needs the try()-catch and instead climbs up the 
 	parsing tree and searches for the first occurrence of "/" resp. "^" and deparses this
+	... in the end this was more complicated than expected, as the parsing tree could give
+	paste()-results of length > 1... (only popped up in a reverse dependency check through 
+	package distrEllipse)
 
 under the hood:
 + triggered by an email by Santhosh V <Santhosh.V@se.com>, we added a patch to be more careful when producing
