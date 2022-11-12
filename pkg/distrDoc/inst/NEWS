@@ -7,11 +7,15 @@
  distrXXX family as a whole in order to ease updating "depends" 
  information)
 
+
 ##############
 v 2.8
 ##############
 
 user-visible CHANGES:
++ replaced obsolete URLs to JSS papers by respective DOIs
++ fixed some broken URLs and changed URLs from http to https where possible
+    changed rstudio.com to posit.co 
 + DESCRIPTION tag SVNRevision changed to VCS/SVNRevision
 + mention the more refined version of liesInSupport in the vignette 
 

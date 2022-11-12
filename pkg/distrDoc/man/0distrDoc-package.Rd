@@ -13,20 +13,17 @@ packages \pkg{distr}, \pkg{distrEx}, \pkg{distrSim}, \pkg{distrTEst},
 \details{
 \tabular{ll}{
 Package: \tab distrDoc \cr
-Version: \tab 2.8.0 \cr
-Date: \tab 2019-03-12 \cr
+Version: \tab 2.8.1 \cr
+Date: \tab 2022-11-12 \cr
 Depends: \tab R(>= 3.4) \cr
-Imports: \tab distr(>= 2.2.0), distrEx(>= 2.2.0), distrSim(>= 2.2.0), distrTEst(>= 2.2.0),
-        distrTeach(>= 2.2.0), RandVar(>= 0.7), distrMod(>= 2.2.0), MASS, methods,
-        SweaveListingUtils, startupmsg  \cr
-Suggests: \tab Biobase \cr
+Imports: \tab distr(>= 2.2.0), distrEx(>= 2.2.0), distrSim(>= 2.2.0), distrTEst(>= 2.2.0),distrTeach(>= 2.2.0), RandVar(>= 0.7), distrMod(>= 2.2.0), MASS, methods,
+startupmsg \cr
+Suggests: \tab Biobase, knitr \cr
 ByteCompile: \tab yes \cr
 License: \tab LGPL-3 \cr
-URL: \tab http://distr.r-forge.r-project.org/\cr
-VCS/SVNRevision: \tab 1319 \cr
+URL: \tab https://distr.r-forge.r-project.org/\cr
+VCS/SVNRevision: \tab 1380 \cr
 }}
-
-
 \section{Acknowledgement}{
 The idea to split off a common vignette for a set of packages 
  in a particular documentation package is due to Seth Falcon.}
@@ -35,32 +32,23 @@ Peter Ruckdeschel \email{peter.ruckdeschel@uni-oldenburg.de},\cr
 Thomas Stabla \email{statho3@web.de},\cr 
 Florian Camphausen \email{fcampi@gmx.de},\cr
 Matthias Kohl \email{Matthias.Kohl@stamats.de}\cr
-
 \emph{Maintainer:} Peter Ruckdeschel \email{peter.ruckdeschel@uni-oldenburg.de}
 }
-
 \seealso{see mails "[Rd] package vignettes, suggests and R CMD check"
          on r-devel by Seth Falcon,\cr
          \url{https://stat.ethz.ch/pipermail/r-devel/2006-November/043702.html},\cr
          \url{https://stat.ethz.ch/pipermail/r-devel/2006-November/043705.html},\cr
          and by the author,\cr  
          \url{https://stat.ethz.ch/pipermail/r-devel/2006-November/043700.html},\cr
-         \url{https://stat.ethz.ch/pipermail/r-devel/2006-November/043703.html}\cr
-         }
-
-
-
+         \url{https://stat.ethz.ch/pipermail/r-devel/2006-November/043703.html}\     cr          }
 \section{Start-up-Banner}{
 You may suppress the start-up banner/message completely by setting \code{options("StartupBanner"="off")}
 somewhere before loading this package by \code{library} or \code{require} in your R-code / R-session.
-
 If option \code{"StartupBanner"} is not defined (default) or setting    
 \code{options("StartupBanner"=NULL)} or  \code{options("StartupBanner"="complete")} 
 the complete start-up banner is displayed.
-
 For any other value of option \code{"StartupBanner"} (i.e., not in \code{c(NULL,"off","complete")})
 only the version information is displayed.
-
 The same can be achieved by wrapping the \code{library} or \code{require}  call into
 either \code{suppressStartupMessages()} or \code{onlytypeStartupMessages(.,atypes="version")}.  
  
@@ -69,7 +57,6 @@ As for general \code{packageStartupMessage}'s, you may also suppress all
  call into \code{suppressPackageStartupMessages()} from 
  \pkg{startupmsg}-version 0.5 on.
   }
-
 \section{Package versions}{
 Note: The first two numbers of package versions do not necessarily reflect
  package-individual development, but rather are chosen for the
