@@ -12,15 +12,15 @@ contoured distributions (based on package distr).
 \details{
 \tabular{ll}{
 Package: \tab distrEllipse \cr
-Version: \tab 2.8.0 \cr
-Date: \tab 2019-04-02 \cr
+Version: \tab 2.8.1 \cr
+Date: \tab 2022-11-12 \cr
 Depends: \tab R(>= 3.4), methods, graphics, mvtnorm, setRNG(>= 2006.2-1), distr(>= 2.8.0),distrEx(>= 2.8.0), distrSim(>= 2.2) \cr
 Suggests: \tab distrMod(>= 2.8.0), distrTEst(>= 2.2) \cr
 Imports: \tab startupmsg, stats \cr
 ByteCompile: \tab yes \cr
 License: \tab LGPL-3 \cr
-URL: \tab http://distr.r-forge.r-project.org/\cr
-VCS/SVNRevision: \tab 1336 \cr
+URL: \tab https://distr.r-forge.r-project.org/\cr
+VCS/SVNRevision: \tab 1380 \cr
 }
 }
 \section{Classes}{
@@ -93,7 +93,7 @@ is included into the mere documentation package \pkg{distrDoc} and may be called
 %A more detailed manual for \pkg{distr}, \pkg{distrEllipse}, \pkg{distrTEst}, and \pkg{distrEx} may be downloaded from
 %\url{http://www.uni-bayreuth.de/departments/math/org/mathe7/DISTR/distr.pdf}.
 A homepage to this package is available under\cr
-\url{http://distr.r-forge.r-project.org/}.
+\url{https://distr.r-forge.r-project.org/}.
 }
 \section{Start-up-Banner}{
 You may suppress the start-up banner/message completely by setting \code{options("StartupBanner"="off")}
