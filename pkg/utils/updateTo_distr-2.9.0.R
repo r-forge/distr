@@ -16,4 +16,15 @@ rownames(Values) <- c("Version","Date","VCS/SVNRevision")
 changeDescription(startDir = "C:/rtest/robast/",names=c("Version","Date","VCS/SVNRevision"),
                   pkgs="ROptEst", values=Values, pathRepo="robast")
 
+Pkgs <- c("distrEx", "distrDoc", "distrRmetrics", "distrSim", "distrTEst",
+                      "distrEllipse", "distrTeach")
+
+Pkgs <- c("distrEx", "distrDoc", "distrRmetrics", "distrSim", "distrTEst",
+                      "distrEllipse", "distrTeach")
+Values <- matrix(c("2.8.1", format(Sys.time(), format="%Y-%m-%d"),1370),nrow=3,ncol=7)
+colnames(Values) <- Pkgs
+rownames(Values) <- c("Version","Date","VCS/SVNRevision")
+Values["Version",c(1,7)] <- "2.9.0" 
+changeDescription(startDir = "C:/rtest/distr/",names=c("Version","Date","VCS/SVNRevision"),
+                  pkgs=Pkgs, values=Values)
 
