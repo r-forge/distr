@@ -28,7 +28,7 @@ same arguments as those of package \pkg{stats}, i.e.; for a distribution object
 For the arguments of these function slots see e.g. \code{\link{rnorm}}.
 Note that, as usual, slots \code{d}, \code{p}, and \code{q} are vectorized
 in their first argument, but are not on the subsequent ones.
-In the environments of RStudio, see \url{https://www.posit.co} and
+In the environments of RStudio, see \url{https://posit.co} and
 Jupyter IRKernel, see \url{https://github.com/IRkernel/IRkernel},
 calls to \code{q} are caught away from standard R evaluation and are treated
 in a non-standard way. This non-standard evaluation in particular throws
