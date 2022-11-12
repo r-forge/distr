@@ -8,12 +8,16 @@
  information)
  
 ##############
-v 2.8.1
+v 2.9.0
 ##############
 
-+ removed our coauthor Anja Hueller's mail address from the package help page, 
-  as this address was no longer valid 
-+ fixed some broken URLs and changed URLs from http to https where possible
+user-visible CHANGES:
+
++ new S4 method for plotting summand distributions of class 
+  "UnivariateDistribution" (i.e., covering, e.g., mixtures 
+  of discrete and abs. cont distributions) -> then only
+  the cdfs for different numbers of summands are plotted
+
 
 ##############
 v 2.8
@@ -21,6 +25,9 @@ v 2.8
 
 user-visible CHANGES:
 + DESCRIPTION tag SVNRevision changed to VCS/SVNRevision
++ removed our coauthor Anja Hueller's mail address from the package help page, 
+  as this address was no longer valid 
++ fixed some broken URLs and changed URLs from http to https where possible
 
 ##############
 v 2.7
