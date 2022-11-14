@@ -30,7 +30,7 @@ Loading required package: startupmsg
 
 Loading required package: sfsmisc
 :distr>  Object Oriented Implementation of Distributions (version
-:distr>  2.9.0)
+:distr>  2.9.1)
 :distr> 
 :distr>  Attention: Arithmetics on distribution objects are
 :distr>  understood as operations on corresponding random variables
@@ -221,6 +221,7 @@ The following objects are masked from 'package:stats':
  [988]  3.547097  3.797206  6.858631  6.332270  3.515725  3.371685  4.436701
  [995]  5.742429 10.011101  6.046900  4.371818  6.658157  7.529650
 > plot(Z+sin(Norm()))
+> 
 > 
 > 
 > cleanEx()
@@ -1649,12 +1650,11 @@ Warning in (new("standardGeneric", .Data = function (object)  :
 > 
 > ### ** Examples
 > 
+> ## IGNORE_RDIFF_BEGIN
 > plot(Maximum(Unif(0,1), Minimum(Unif(0,1), Unif(0,1))))
 > plot(Minimum(Exp(4),4))
-> ## a sometimes lengthy example...
-> ## No test: 
-> plot(Minimum(Norm(),Pois()))
-> ## End(No test)
+> ## IGNORE_RDIFF_END
+> 
 > 
 > 
 > 
@@ -2002,6 +2002,7 @@ Warning in .makeDNew(dxy$x, dxy$y, standM = "int") :
 > # squared standard normal distribution
 > x$dfun(4)
 [1] 0.02970112
+> ## IGNORE_RDIFF_BEGIN
 > RtoDPQ(r = rn2, e = 5, n = 1024) # for a better result
 Warning in .makeDNew(dxy$x, dxy$y, standM = "int") :
   'integrate()' threw an error ---result may be inaccurate.
@@ -2011,8 +2012,8 @@ function(x, log = FALSE)
                           d0 <-    log(df1(x))-log(stand)
                      else d0 <- df1(x) / stand
                      return (d0)}
-<bytecode: 0x0000026e095f0de8>
-<environment: 0x0000026e0c5b6f38>
+<bytecode: 0x0000022d496765d0>
+<environment: 0x0000022d4e1c7170>
 
 $pfun
 function (q, lower.tail = TRUE, log.p = FALSE) 
@@ -2027,7 +2028,7 @@ function (q, lower.tail = TRUE, log.p = FALSE)
     else p0/nm
     return(p0)
 }
-<environment: 0x0000026e0c3a9a38>
+<environment: 0x0000022d4f17b5e0>
 
 $qfun
 function (p, lower.tail = TRUE, log.p = FALSE) 
@@ -2045,9 +2046,9 @@ function (p, lower.tail = TRUE, log.p = FALSE)
     else q.l0(1 - p01)
     return(as.numeric(q0))
 }
-<environment: 0x0000026e12383518>
+<environment: 0x0000022d4f344678>
 
-> 
+> ## IGNORE_RDIFF_END
 > rp2 <- function(n){rpois(n, lambda = 1)^2}
 > x <- RtoDPQ.d(r = rp2, e = 5)
 > # returns density, cumulative distribution and quantile function of
@@ -2075,9 +2076,9 @@ Warning in .makeDNew(dxy$x, dxy$y, standM = "int") :
   'integrate()' threw an error ---result may be inaccurate.
 > # returns density, cumulative distribution and quantile function of
 > # squared standard  normal distribution
-> 
 > x$dfun(4)
 [1] 0.02970112
+> ## IGNORE_RDIFF_BEGIN
 > RtoDPQ(r = rn2, e = 5, n = 1024) # for a better result
 Warning in .makeDNew(dxy$x, dxy$y, standM = "int") :
   'integrate()' threw an error ---result may be inaccurate.
@@ -2087,8 +2088,8 @@ function(x, log = FALSE)
                           d0 <-    log(df1(x))-log(stand)
                      else d0 <- df1(x) / stand
                      return (d0)}
-<bytecode: 0x0000026e095f0de8>
-<environment: 0x0000026e0ffb81a8>
+<bytecode: 0x0000022d496765d0>
+<environment: 0x0000022d4c5a06d0>
 
 $pfun
 function (q, lower.tail = TRUE, log.p = FALSE) 
@@ -2103,7 +2104,7 @@ function (q, lower.tail = TRUE, log.p = FALSE)
     else p0/nm
     return(p0)
 }
-<environment: 0x0000026e0fd68ac8>
+<environment: 0x0000022d4c361938>
 
 $qfun
 function (p, lower.tail = TRUE, log.p = FALSE) 
@@ -2121,9 +2122,9 @@ function (p, lower.tail = TRUE, log.p = FALSE)
     else q.l0(1 - p01)
     return(as.numeric(q0))
 }
-<environment: 0x0000026e0fd2baa0>
+<environment: 0x0000022d4e004338>
 
-> 
+> ## IGNORE_RDIFF_END
 > rp2 <- function(n){rpois(n, lambda = 1)^2}
 > x <- RtoDPQ.d(r = rp2, e = 5)
 > # returns density, cumulative distribution and quantile function of
@@ -3311,24 +3312,6 @@ Distribution Object of Class: AbscontDistribution
 Warning in (new("standardGeneric", .Data = function (object)  :
   arithmetics on distributions are understood as operations on r.v.'s
 see 'distrARITH()'; for switching off this warning see '?distroptions'
-> ## No test: 
-> ## takes a little time
-> N ^ P
-An object of class "UnivarLebDecDistribution"
- --- a Lebesgue decomposed distribution:
-
-    Its discrete part (with weight 0.018000) is a
- Distribution Object of Class: Dirac
- location: 1
- This part is accessible with 'discretePart(<obj>)'.
-
-    Its absolutely continuous part (with weight 0.982000) is a
- Distribution Object of Class: AbscontDistribution
- This part is accessible with 'acPart(<obj>)'.
-Warning in (new("standardGeneric", .Data = function (object)  :
-  arithmetics on distributions are understood as operations on r.v.'s
-see 'distrARITH()'; for switching off this warning see '?distroptions'
-> ## End(No test)
 > 1.2 ^ N
 Distribution Object of Class: AbscontDistribution
 Warning in (new("standardGeneric", .Data = function (object)  :
@@ -3687,6 +3670,7 @@ TRUE TRUE
 > 
 > ### ** Examples
 > 
+> ## IGNORE_RDIFF_BEGIN
 > qqplot(Norm(15,sqrt(30)), Chisq(df=15))
 dev.new(): using pdf(file="Rplots27.pdf")
 > ## some discrete Distributions:
@@ -3694,34 +3678,19 @@ dev.new(): using pdf(file="Rplots27.pdf")
 > B <- Binom(size=2000,prob=5/2000)
 > qqplot(B,P)
 dev.new(): using pdf(file="Rplots28.pdf")
-> ## No test: 
-> ## takes too much time for R CMD check --as-cran
-> qqplot(B,P, nosym.pCI=TRUE)
-dev.new(): using pdf(file="Rplots29.pdf")
-> ## End(No test)
+> ## IGNORE_RDIFF_END
 > ## some Lebesgue-Decomposed distributions:
 > mylist <- UnivarLebDecDistribution(discretePart=Binom(3,.3), acPart=Norm(2,2),
 +                acWeight=11/20)
 > mylist2 <- mylist+0.1
+> 
+> ## IGNORE_RDIFF_BEGIN
 > qqplot(mylist,mylist2)
-dev.new(): using pdf(file="Rplots30.pdf")
+dev.new(): using pdf(file="Rplots29.pdf")
 > qqplot(mylist,mylist2,exact.pCI=FALSE,exact.sCI=FALSE)
-dev.new(): using pdf(file="Rplots31.pdf")
-> ## No test: 
-> ## takes too much time for R CMD check --as-cran
-> qqplot(mylist,mylist2,nosym.pCI=TRUE)
-dev.new(): using pdf(file="Rplots32.pdf")
-> ## some ac. distribution with a gap
-> mylist3 <- UnivarMixingDistribution(Unif(0,0.3),Unif(0.6,1),mixCoeff=c(0.8,0.2))
-> gaps(mylist3)
-          [,1]      [,2]
-[1,] 0.3000069 0.5999908
-> mylist4 <- UnivarMixingDistribution(Unif(0,0.3),Unif(0.6,1),mixCoeff=c(0.6,0.4))
-> qqplot(mylist3,mylist4)
-dev.new(): using pdf(file="Rplots33.pdf")
-> qqplot(mylist3,mylist4,nosym.pCI=TRUE)
-dev.new(): using pdf(file="Rplots34.pdf")
-> ## End(No test)
+dev.new(): using pdf(file="Rplots30.pdf")
+> ## IGNORE_RDIFF_END
+> 
 > 
 > 
 > 
@@ -3827,13 +3796,18 @@ see 'distrARITH()'; for switching off this warning see '?distroptions'
 > ### ** Examples
 > 
 > F <- ( Norm() + Binom() + Pois() + Exp() ) * 2 - 10
+> ## IGNORE_RDIFF_BEGIN
 > system.time(r(F)(10^6))
    user  system elapsed 
-    0.3     0.0     0.3 
+   0.33    0.00    0.33 
+> ## IGNORE_RDIFF_END
 > simplifyr(F, size = 10^6)
+> ## IGNORE_RDIFF_BEGIN
 > system.time(r(F)(10^6))
    user  system elapsed 
-   0.09    0.00    0.10 
+   0.08    0.00    0.08 
+> ## IGNORE_RDIFF_END
+> 
 > 
 > 
 > cleanEx()
@@ -3868,7 +3842,7 @@ setReplaceMethod("b", "testclass", function(object, value){ object@b <- value; o
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  90.1 4.19 104.75 NA NA 
+Time elapsed:  29.17 2.16 31.71 NA NA 
 > grDevices::dev.off()
 pdf 
  19 
