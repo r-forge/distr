@@ -223,6 +223,7 @@ The following objects are masked from 'package:stats':
 > plot(Z+sin(Norm()))
 > 
 > 
+> 
 > cleanEx()
 > nameEx("AbscontDistribution-class")
 > ### * AbscontDistribution-class
@@ -1653,10 +1654,7 @@ Warning in (new("standardGeneric", .Data = function (object)  :
 > plot(Maximum(Unif(0,1), Minimum(Unif(0,1), Unif(0,1))))
 > plot(Minimum(Exp(4),4))
 > ## IGNORE_RDIFF_END
-> ## a sometimes lengthy example...
-> ## No test: 
-> plot(Minimum(Norm(),Pois()))
-> ## End(No test)
+> 
 > 
 > 
 > 
@@ -2014,8 +2012,8 @@ function(x, log = FALSE)
                           d0 <-    log(df1(x))-log(stand)
                      else d0 <- df1(x) / stand
                      return (d0)}
-<bytecode: 0x0000025cfaa5c0a0>
-<environment: 0x0000025cfd9e3260>
+<bytecode: 0x0000022d496765d0>
+<environment: 0x0000022d4e1c7170>
 
 $pfun
 function (q, lower.tail = TRUE, log.p = FALSE) 
@@ -2030,7 +2028,7 @@ function (q, lower.tail = TRUE, log.p = FALSE)
     else p0/nm
     return(p0)
 }
-<environment: 0x0000025cfd7c43f8>
+<environment: 0x0000022d4f17b5e0>
 
 $qfun
 function (p, lower.tail = TRUE, log.p = FALSE) 
@@ -2048,10 +2046,9 @@ function (p, lower.tail = TRUE, log.p = FALSE)
     else q.l0(1 - p01)
     return(as.numeric(q0))
 }
-<environment: 0x0000025c82b29648>
+<environment: 0x0000022d4f344678>
 
 > ## IGNORE_RDIFF_END
-> 
 > rp2 <- function(n){rpois(n, lambda = 1)^2}
 > x <- RtoDPQ.d(r = rp2, e = 5)
 > # returns density, cumulative distribution and quantile function of
@@ -2079,7 +2076,6 @@ Warning in .makeDNew(dxy$x, dxy$y, standM = "int") :
   'integrate()' threw an error ---result may be inaccurate.
 > # returns density, cumulative distribution and quantile function of
 > # squared standard  normal distribution
-> 
 > x$dfun(4)
 [1] 0.02970112
 > ## IGNORE_RDIFF_BEGIN
@@ -2092,8 +2088,8 @@ function(x, log = FALSE)
                           d0 <-    log(df1(x))-log(stand)
                      else d0 <- df1(x) / stand
                      return (d0)}
-<bytecode: 0x0000025cfaa5c0a0>
-<environment: 0x0000025c81fe2fb8>
+<bytecode: 0x0000022d496765d0>
+<environment: 0x0000022d4c5a06d0>
 
 $pfun
 function (q, lower.tail = TRUE, log.p = FALSE) 
@@ -2108,7 +2104,7 @@ function (q, lower.tail = TRUE, log.p = FALSE)
     else p0/nm
     return(p0)
 }
-<environment: 0x0000025c81d7bce8>
+<environment: 0x0000022d4c361938>
 
 $qfun
 function (p, lower.tail = TRUE, log.p = FALSE) 
@@ -2126,10 +2122,9 @@ function (p, lower.tail = TRUE, log.p = FALSE)
     else q.l0(1 - p01)
     return(as.numeric(q0))
 }
-<environment: 0x0000025c81d46fa0>
+<environment: 0x0000022d4e004338>
 
 > ## IGNORE_RDIFF_END
-> 
 > rp2 <- function(n){rpois(n, lambda = 1)^2}
 > x <- RtoDPQ.d(r = rp2, e = 5)
 > # returns density, cumulative distribution and quantile function of
@@ -3317,24 +3312,6 @@ Distribution Object of Class: AbscontDistribution
 Warning in (new("standardGeneric", .Data = function (object)  :
   arithmetics on distributions are understood as operations on r.v.'s
 see 'distrARITH()'; for switching off this warning see '?distroptions'
-> ## No test: 
-> ## takes a little time
-> N ^ P
-An object of class "UnivarLebDecDistribution"
- --- a Lebesgue decomposed distribution:
-
-    Its discrete part (with weight 0.018000) is a
- Distribution Object of Class: Dirac
- location: 1
- This part is accessible with 'discretePart(<obj>)'.
-
-    Its absolutely continuous part (with weight 0.982000) is a
- Distribution Object of Class: AbscontDistribution
- This part is accessible with 'acPart(<obj>)'.
-Warning in (new("standardGeneric", .Data = function (object)  :
-  arithmetics on distributions are understood as operations on r.v.'s
-see 'distrARITH()'; for switching off this warning see '?distroptions'
-> ## End(No test)
 > 1.2 ^ N
 Distribution Object of Class: AbscontDistribution
 Warning in (new("standardGeneric", .Data = function (object)  :
@@ -3701,35 +3678,19 @@ dev.new(): using pdf(file="Rplots27.pdf")
 > B <- Binom(size=2000,prob=5/2000)
 > qqplot(B,P)
 dev.new(): using pdf(file="Rplots28.pdf")
-> ## No test: 
-> ## takes too much time for R CMD check --as-cran
-> qqplot(B,P, nosym.pCI=TRUE)
-dev.new(): using pdf(file="Rplots29.pdf")
-> ## End(No test)
+> ## IGNORE_RDIFF_END
 > ## some Lebesgue-Decomposed distributions:
 > mylist <- UnivarLebDecDistribution(discretePart=Binom(3,.3), acPart=Norm(2,2),
 +                acWeight=11/20)
 > mylist2 <- mylist+0.1
+> 
+> ## IGNORE_RDIFF_BEGIN
 > qqplot(mylist,mylist2)
-dev.new(): using pdf(file="Rplots30.pdf")
+dev.new(): using pdf(file="Rplots29.pdf")
 > qqplot(mylist,mylist2,exact.pCI=FALSE,exact.sCI=FALSE)
-dev.new(): using pdf(file="Rplots31.pdf")
-> ## No test: 
-> ## takes too much time for R CMD check --as-cran
-> qqplot(mylist,mylist2,nosym.pCI=TRUE)
-dev.new(): using pdf(file="Rplots32.pdf")
-> ## some ac. distribution with a gap
-> mylist3 <- UnivarMixingDistribution(Unif(0,0.3),Unif(0.6,1),mixCoeff=c(0.8,0.2))
-> gaps(mylist3)
-          [,1]      [,2]
-[1,] 0.3000069 0.5999908
-> mylist4 <- UnivarMixingDistribution(Unif(0,0.3),Unif(0.6,1),mixCoeff=c(0.6,0.4))
-> qqplot(mylist3,mylist4)
-dev.new(): using pdf(file="Rplots33.pdf")
-> qqplot(mylist3,mylist4,nosym.pCI=TRUE)
-dev.new(): using pdf(file="Rplots34.pdf")
+dev.new(): using pdf(file="Rplots30.pdf")
 > ## IGNORE_RDIFF_END
-> ## End(No test)
+> 
 > 
 > 
 > 
@@ -3838,13 +3799,15 @@ see 'distrARITH()'; for switching off this warning see '?distroptions'
 > ## IGNORE_RDIFF_BEGIN
 > system.time(r(F)(10^6))
    user  system elapsed 
-   0.25    0.01    0.27 
+   0.33    0.00    0.33 
 > ## IGNORE_RDIFF_END
 > simplifyr(F, size = 10^6)
 > ## IGNORE_RDIFF_BEGIN
 > system.time(r(F)(10^6))
    user  system elapsed 
-   0.07    0.00    0.08 
+   0.08    0.00    0.08 
+> ## IGNORE_RDIFF_END
+> 
 > 
 > 
 > cleanEx()
@@ -3879,7 +3842,7 @@ setReplaceMethod("b", "testclass", function(object, value){ object@b <- value; o
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  63.75 3.22 68.06 NA NA 
+Time elapsed:  29.17 2.16 31.71 NA NA 
 > grDevices::dev.off()
 pdf 
  19 
