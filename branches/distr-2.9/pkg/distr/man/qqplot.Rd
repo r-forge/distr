@@ -142,6 +142,7 @@ produces a QQ plot for two univariate distributions.}
   Peter Ruckdeschel \email{peter.ruckdeschel@uni-oldenburg.de}
 }
 \examples{
+## IGNORE_RDIFF_BEGIN
 qqplot(Norm(15,sqrt(30)), Chisq(df=15))
 ## some discrete Distributions:
 P <- Pois(5)
@@ -166,6 +167,7 @@ gaps(mylist3)
 mylist4 <- UnivarMixingDistribution(Unif(0,0.3),Unif(0.6,1),mixCoeff=c(0.6,0.4))
 qqplot(mylist3,mylist4)
 qqplot(mylist3,mylist4,nosym.pCI=TRUE)
+## IGNORE_RDIFF_END
 }
 }
 \keyword{hplot}
