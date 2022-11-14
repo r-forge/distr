@@ -28,3 +28,11 @@ Values["Version",c(1,7)] <- "2.9.0"
 changeDescription(startDir = "C:/rtest/distr/",names=c("Version","Date","VCS/SVNRevision"),
                   pkgs=Pkgs, values=Values)
 
+Pkgs <- c("distr", "distrMod")
+Values <- matrix(c("2.9.0", format(Sys.time(), format="%Y-%m-%d"),1370),nrow=3,ncol=2)
+colnames(Values) <- Pkgs
+rownames(Values) <- c("Version","Date","VCS/SVNRevision")
+Values["Version",c(1,1)] <- "2.9.1" 
+changeDescription(startDir = "C:/rtest/distr/",names=c("Version","Date","VCS/SVNRevision"),
+                  pkgs=Pkgs, values=Values)
+
