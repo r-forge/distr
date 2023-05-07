@@ -1,13 +1,11 @@
-citHeader("To cite package distrEllipse in publications use:")
-
-citEntry(entry="Article",
-         title = "S4 Classes for Distributions",
-         author = personList(as.person("P. Ruckdeschel"),
+bibentry(bibtype = "Article",
+         mheader = "To cite package distrDoc (and other packages of the distr family of packages) in publications use:",
+		 title = "S4 Classes for Distributions",
+         author = c(as.person("P. Ruckdeschel"),
                         as.person("M. Kohl"),
                         as.person("T. Stabla"),
                         as.person("F. Camphausen")),
          language = "English",
-         year = 2006,
          journal      = "R News",
          year         = 2006,
          volume       = 6,
