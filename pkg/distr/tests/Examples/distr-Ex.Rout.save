@@ -29,7 +29,6 @@ Loading required package: startupmsg
 :startupmsg>  NEWS("startupmsg")
 
 Loading required package: sfsmisc
-Warning: package 'sfsmisc' was built under R version 4.1.3
 :distr>  Object Oriented Implementation of Distributions (version
 :distr>  2.9.2)
 :distr> 
