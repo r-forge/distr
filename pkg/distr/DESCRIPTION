@@ -1,6 +1,6 @@
 Package: distr
-Version: 2.9.1
-Date: 2022-11-14
+Version: 2.9.2
+Date: 2023-05-08
 Title: Object Oriented Implementation of Distributions
 Description: S4-classes and methods for distributions.
 Authors@R: c(person("Florian", "Camphausen", role="ctb", comment="contributed as student in
@@ -13,6 +13,7 @@ Authors@R: c(person("Florian", "Camphausen", role="ctb", comment="contributed as
 Depends: R(>= 3.4), methods, graphics, startupmsg, sfsmisc
 Suggests: distrEx, svUnit (>= 0.7-11), knitr, distrMod, ROptEst
 Imports: stats, grDevices, utils, MASS
+Enhances: RobAStBase
 VignetteBuilder: knitr
 ByteCompile: yes
 Encoding: latin1

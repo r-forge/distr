@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2022-09-25 r82916 ucrt) -- "Unsuffered Consequences"
+R version 4.1.2 Patched (2022-01-17 r81511) -- "Bird Hippie"
 Copyright (C) 2022 The R Foundation for Statistical Computing
-Platform: x86_64-w64-mingw32/x64 (64-bit)
+Platform: i386-w64-mingw32/i386 (32-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -29,8 +29,9 @@ Loading required package: startupmsg
 :startupmsg>  NEWS("startupmsg")
 
 Loading required package: sfsmisc
+Warning: package 'sfsmisc' was built under R version 4.1.3
 :distr>  Object Oriented Implementation of Distributions (version
-:distr>  2.9.1)
+:distr>  2.9.2)
 :distr> 
 :distr>  Attention: Arithmetics on distribution objects are
 :distr>  understood as operations on corresponding random variables
@@ -1966,6 +1967,7 @@ An object of class "PosDefSymmMatrix"
 > 
 > ### ** Examples
 > 
+> set.seed(20230508)
 > rn2 <- function(n)ifelse(rbinom(n,1,0.3),rnorm(n)^2,rbinom(n,4,.3))
 > x <- RtoDPQ.LC(r = rn2, e = 4, n = 512)
 Warning in .makeDNew(dxy$x, dxy$y, standM = "int") :
@@ -1973,9 +1975,13 @@ Warning in .makeDNew(dxy$x, dxy$y, standM = "int") :
 > plot(x)
 > # returns density, cumulative distribution and quantile function of
 > # squared standard normal distribution
+> ## IGNORE_RDIFF_BEGIN
 > d.discrete(x)(4)
-[1] 0.009477312
+[1] 0.006991012
+> ## IGNORE_RDIFF_END
 > x2 <- RtoDPQ.LC(r = rn2, e = 5, n = 1024) # for a better result
+Warning in .makeDNew(dxy$x, dxy$y, standM = "int") :
+  'integrate()' threw an error ---result may be inaccurate.
 > plot(x2)
 > 
 > 
@@ -1994,26 +2000,23 @@ Warning in .makeDNew(dxy$x, dxy$y, standM = "int") :
 > 
 > ### ** Examples
 > 
+> set.seed(20230508)
 > rn2 <- function(n){rnorm(n)^2}
 > x <- RtoDPQ(r = rn2, e = 4, n = 512)
-Warning in .makeDNew(dxy$x, dxy$y, standM = "int") :
-  'integrate()' threw an error ---result may be inaccurate.
 > # returns density, cumulative distribution and quantile function of
 > # squared standard normal distribution
-> x$dfun(4)
-[1] 0.02970112
 > ## IGNORE_RDIFF_BEGIN
+> x$dfun(4)
+[1] 0.0254851
 > RtoDPQ(r = rn2, e = 5, n = 1024) # for a better result
-Warning in .makeDNew(dxy$x, dxy$y, standM = "int") :
-  'integrate()' threw an error ---result may be inaccurate.
 $dfun
 function(x, log = FALSE)
                     {if (log)
                           d0 <-    log(df1(x))-log(stand)
                      else d0 <- df1(x) / stand
                      return (d0)}
-<bytecode: 0x000001a2449549b8>
-<environment: 0x000001a249a93c70>
+<bytecode: 0x09c3ea20>
+<environment: 0x0fcce4e0>
 
 $pfun
 function (q, lower.tail = TRUE, log.p = FALSE) 
@@ -2028,7 +2031,7 @@ function (q, lower.tail = TRUE, log.p = FALSE)
     else p0/nm
     return(p0)
 }
-<environment: 0x000001a24a6e2820>
+<environment: 0x0fab9ff0>
 
 $qfun
 function (p, lower.tail = TRUE, log.p = FALSE) 
@@ -2046,7 +2049,7 @@ function (p, lower.tail = TRUE, log.p = FALSE)
     else q.l0(1 - p01)
     return(as.numeric(q0))
 }
-<environment: 0x000001a24aa063a8>
+<environment: 0x0a846388>
 
 > ## IGNORE_RDIFF_END
 > rp2 <- function(n){rpois(n, lambda = 1)^2}
@@ -2070,26 +2073,23 @@ function (p, lower.tail = TRUE, log.p = FALSE)
 > 
 > ### ** Examples
 > 
+> set.seed(20230508)
 > rn2 <- function(n){rnorm(n)^2}
 > x <- RtoDPQ(r = rn2, e = 4, n = 512)
-Warning in .makeDNew(dxy$x, dxy$y, standM = "int") :
-  'integrate()' threw an error ---result may be inaccurate.
 > # returns density, cumulative distribution and quantile function of
 > # squared standard  normal distribution
-> x$dfun(4)
-[1] 0.02970112
 > ## IGNORE_RDIFF_BEGIN
+> x$dfun(4)
+[1] 0.0254851
 > RtoDPQ(r = rn2, e = 5, n = 1024) # for a better result
-Warning in .makeDNew(dxy$x, dxy$y, standM = "int") :
-  'integrate()' threw an error ---result may be inaccurate.
 $dfun
 function(x, log = FALSE)
                     {if (log)
                           d0 <-    log(df1(x))-log(stand)
                      else d0 <- df1(x) / stand
                      return (d0)}
-<bytecode: 0x000001a2449549b8>
-<environment: 0x000001a247a3fcc0>
+<bytecode: 0x09c3ea20>
+<environment: 0x0a649c00>
 
 $pfun
 function (q, lower.tail = TRUE, log.p = FALSE) 
@@ -2104,7 +2104,7 @@ function (q, lower.tail = TRUE, log.p = FALSE)
     else p0/nm
     return(p0)
 }
-<environment: 0x000001a247804248>
+<environment: 0x0a4c3fc0>
 
 $qfun
 function (p, lower.tail = TRUE, log.p = FALSE) 
@@ -2122,7 +2122,7 @@ function (p, lower.tail = TRUE, log.p = FALSE)
     else q.l0(1 - p01)
     return(as.numeric(q0))
 }
-<environment: 0x000001a24a7caef0>
+<environment: 0x0a49ce50>
 
 > ## IGNORE_RDIFF_END
 > rp2 <- function(n){rpois(n, lambda = 1)^2}
@@ -3638,7 +3638,7 @@ $crit
 [14,] 1.99347252   5.34675 2.372039  4.68228
 [15,] 2.15946536   5.69602 2.542814  4.95809
 [16,] 2.38432838   6.23846 2.720990  5.25094
-[17,] 2.68737426   7.15345 2.907901  5.56431
+[17,] 2.68737426   7.15345 2.907900  5.56431
 [18,] 2.86053193   7.83015 3.105154  5.90261
 [19,] 2.93370263   8.16978 3.314728  6.27159
 [20,] 3.04149797   8.75669 3.314728  6.27159
@@ -3804,13 +3804,13 @@ see 'distrARITH()'; for switching off this warning see '?distroptions'
 > ## IGNORE_RDIFF_BEGIN
 > system.time(r(F)(10^6))
    user  system elapsed 
-   0.28    0.02    0.30 
+   0.33    0.02    0.35 
 > ## IGNORE_RDIFF_END
 > simplifyr(F, size = 10^6)
 > ## IGNORE_RDIFF_BEGIN
 > system.time(r(F)(10^6))
    user  system elapsed 
-   0.11    0.00    0.11 
+   0.12    0.00    0.13 
 > ## IGNORE_RDIFF_END
 > 
 > 
@@ -3847,7 +3847,7 @@ setReplaceMethod("b", "testclass", function(object, value){ object@b <- value; o
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  23.19 1.83 25.23 NA NA 
+Time elapsed:  19.79 1.9 22.74 NA NA 
 > grDevices::dev.off()
 pdf 
  19 
