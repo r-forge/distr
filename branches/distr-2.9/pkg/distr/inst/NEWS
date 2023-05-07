@@ -8,6 +8,13 @@
  information)
  
 ##############
+v 2.9.2
+##############
+under the hood:
++ included pkg RobAStBase into "Enhances" in the DESCRIPTION file
++ moved some code in the help to RtoDPQ.d relying on the RNG into IGNORE_RDIFF 
+
+##############
 v 2.9
 ##############
 
