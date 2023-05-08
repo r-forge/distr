@@ -11,6 +11,12 @@
 v 2.9
 ##############
 
+under the hood:
++ converted encoding to UTF-8
++ transformed CITATION file to new format, i.e., bibentry() instead of citEntry(),
+        c(as.person( .... ), as.person( .... ), ...), instead of 
+		as.personList(....) 
+
 ##############
 v 2.8
 ##############

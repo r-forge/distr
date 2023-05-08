@@ -23,6 +23,10 @@ under the hood:
 +  KolmogorovDist methods gain argument "..." in order to enable them to
    digest argument validity.check in MCEstimator 
 + fixed some broken URLs and changed URLs from http to https where possible
++ transformed CITATION file to new format, i.e., bibentry() instead of citEntry(),
+        c(as.person( .... ), as.person( .... ), ...), instead of 
+		as.personList(....) 
++ converted encoding to UTF-8
    
 ##############
 v 2.8

@@ -18,6 +18,12 @@ user-visible CHANGES:
   of discrete and abs. cont distributions) -> then only
   the cdfs for different numbers of summands are plotted
 
+under the hood:
++ converted encoding to UTF-8
++ transformed CITATION file to new format, i.e., bibentry() instead of citEntry(),
+        c(as.person( .... ), as.person( .... ), ...), instead of 
+		as.personList(....) 
+
 
 ##############
 v 2.8

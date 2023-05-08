@@ -8,6 +8,8 @@ v 0.9.6
 
 user-visible CHANGES:
 + DESCRIPTION tag SVNRevision changed to VCS/SVNRevision
+under the hood:
++ converted encoding to UTF-8
 
 ##############
 v 0.9

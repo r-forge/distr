@@ -391,6 +391,10 @@ under the hood:
 
 + DESCRIPTION files and package-help files gain a tag 
   SVNRevision to be filled by get[All]RevNr.R from utils in distr
++ converted encoding to UTF-8
++ transformed CITATION file to new format, i.e., bibentry() instead of citEntry(),
+        c(as.person( .... ), as.person( .... ), ...), instead of 
+		as.personList(....) 
 
 
 BUGFIXES:
