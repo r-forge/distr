@@ -20,7 +20,7 @@ Suggests: \tab distrMod(>= 2.8.0), distrTEst(>= 2.2) \cr
 Imports: \tab startupmsg, stats \cr
 ByteCompile: \tab yes \cr
 License: \tab LGPL-3 \cr
-URL: \tab https://distr.r-forge.r-project.org/\cr
+URL: \tab https://r-forge.r-project.org/projects/distr/\cr
 VCS/SVNRevision: \tab 1324 \cr
 }
 }

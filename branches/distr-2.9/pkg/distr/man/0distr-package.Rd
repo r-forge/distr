@@ -51,7 +51,7 @@ Suggests: \tab distrEx, svUnit (>= 0.7-11), knitr, distrMod, ROptEst \cr
 Imports: \tab stats, grDevices, utils, MASS \cr
 LazyLoad: \tab yes \cr
 License: \tab LGPL-3 \cr
-URL: \tab https://distr.r-forge.r-project.org/\cr
+URL: \tab https://r-forge.r-project.org/projects/distr/\cr
 VCS/SVNRevision: \tab 1395 \cr
 }}
 \section{Classes}{

@@ -21,7 +21,7 @@ Suggests: \tab distrEx(>= 2.8.0) \cr
 Imports: \tab startupmsg, stats, grDevices \cr
 LazyLoad: \tab yes \cr
 License: \tab LGPL-3 \cr
-URL: \tab https://distr.r-forge.r-project.org/\cr
+URL: \tab https://r-forge.r-project.org/projects/distr/\cr
 VCS/SVNRevision: \tab 1324 \cr
 }
 }

@@ -20,40 +20,69 @@
 
 ### intentionally mask functionals for additional ... argument P.R. 28-03-06
 
-var <- function(x , ...)
-       {dots <- list(...)
-        if(hasArg(y)) y <- dots$"y"
-        na.rm <- ifelse(hasArg(na.rm), dots$"na.rm", FALSE)
-        if(!hasArg(use)) 
-             use <- ifelse (na.rm, "complete.obs","all.obs")
-        else use <- dots$"use"
-        if(hasArg(y))       
-           stats::var(x = x, y = y, na.rm = na.rm, use)
-        else
-           stats::var(x = x, y = NULL, na.rm = na.rm, use)
-        }   
+
+var <- function(x , ...){
+        mf <- match.call(expand.dots = TRUE)
+		m <- match(c("x", "y", "na.rm", "use"), names(mf), 0L)
+		mf <- mf[c(1L, m)]
+		mf[[1L]] <- quote(stats::var)
+		eval(as.call(mf))
+		}   
+### PR 20230202: use match.call to reproduce stats::var more closely as default method
+
+## old version: (throws, e.g., errors for var(NA))
+# var <- function(x , ...)
+#        {dots <- list(...)
+#         if(hasArg(y)) y <- dots$"y"
+#        na.rm <- ifelse(hasArg(na.rm), dots$"na.rm", FALSE)
+#         if(!hasArg(use)) 
+#              use <- ifelse (na.rm, "complete.obs","all.obs")
+#         else use <- dots$"use"
+#         if(hasArg(y))       
+#            stats::var(x = x, y = y, na.rm = na.rm, use)
+#         else
+#            stats::var(x = x, y = NULL, na.rm = na.rm, use)
+#         }   
 
 ## sd already masked in NormalDistribution.R in package "distr"
 
-median <- function(x , ...)
-       {dots <- list(...)
-        na.rm <- ifelse(hasArg(na.rm), dots$"na.rm", FALSE)
-        stats::median(x = x, na.rm = na.rm)}
+median <- function(x , ...){
+        mf <- match.call(expand.dots = TRUE)
+		m <- match(c("x", "na.rm"), names(mf), 0L)
+		mf <- mf[c(1L, m)]
+		mf[[1L]] <- quote(stats::median)
+		eval(as.call(mf))
+}
+#       {dots <- list(...)
+#        na.rm <- ifelse(hasArg(na.rm), dots$"na.rm", FALSE)
+#        stats::median(x = x, na.rm = na.rm)}
 
-IQR <- function(x , ...)
-       {dots <- list(...)
-        na.rm <- ifelse(hasArg(na.rm), dots$"na.rm", FALSE)
-        stats::IQR(x = x, na.rm = na.rm)}
+IQR <- function(x , ...){
+        mf <- match.call(expand.dots = TRUE)
+		m <- match(c("x", "na.rm"), names(mf), 0L)
+		mf <- mf[c(1L, m)]
+		mf[[1L]] <- quote(stats::IQR)
+		eval(as.call(mf))
+}
+#       {dots <- list(...)
+#        na.rm <- ifelse(hasArg(na.rm), dots$"na.rm", FALSE)
+#        stats::IQR(x = x, na.rm = na.rm)}
 
-mad <- function(x , ...)
-       {dots <- list(...)
-        na.rm     <- ifelse(hasArg(na.rm), dots$"na.rm", FALSE)
-        low       <-  ifelse(hasArg(low), dots$"low", FALSE)
-        high      <-  ifelse(hasArg(high), dots$"high", FALSE)
-        center    <-  ifelse(hasArg(center), dots$"center", median(x))
-        constant  <-  ifelse(hasArg(constant), dots$"constant", 1.4826)
-        stats::mad(x = x, center = center, constant = constant , na.rm = na.rm, 
-                   low = low, high = high)}
+mad <- function(x , ...){
+        mf <- match.call(expand.dots = TRUE)
+		m <- match(c("x", "na.rm", "low", "high", "center", "constant"), names(mf), 0L)
+		mf <- mf[c(1L, m)]
+		mf[[1L]] <- quote(stats::mad)
+		eval(as.call(mf))
+}
+#       {dots <- list(...)
+#        na.rm     <- ifelse(hasArg(na.rm), dots$"na.rm", FALSE)
+#        low       <-  ifelse(hasArg(low), dots$"low", FALSE)
+#        high      <-  ifelse(hasArg(high), dots$"high", FALSE)
+#        center    <-  ifelse(hasArg(center), dots$"center", median(x))
+#        constant  <-  ifelse(hasArg(constant), dots$"constant", 1.4826)
+#        stats::mad(x = x, center = center, constant = constant , na.rm = na.rm, 
+#                   low = low, high = high)}
 
 ### --------- registration as generics ------------------
 
