@@ -8,6 +8,16 @@
  information)
  
 ##############
+v 2.9.3
+##############
+bug fixes
++ detected by Christoph Dalitz <christoph.dalitz@hs-niederrhein.de>
+  when multiplying DiscreteDistributions, the positive and negative parts of 
+  which are Dirac Distributions, .finSupport was not returned of length 2 
+  (as needed), 
+
+
+##############
 v 2.9.2
 ##############
 under the hood:
