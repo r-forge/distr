@@ -1,4 +1,3 @@
-
 @echo off
 rem if /i "%1"==path (path %2) && goto:eof
 
@@ -85,7 +84,7 @@ set PATHQ=%PATH%
 set path2=%path2:~1%
 
 if defined R_TOOLS (
-    set path2=%R_TOOLS%\bin;%R_TOOLS%\perl\bin;%R_TOOLS%\MinGW\bin;%PATH2%
+REM    set path2=%R_TOOLS%\bin;%R_TOOLS%\perl\bin;%R_TOOLS%\MinGW\bin;%PATH2%
 )
 
 path %path2%

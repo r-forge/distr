@@ -8,6 +8,13 @@
  information)
  
 ##############
+v 2.9.3
+##############
+bug fixes:
++ fixed a glitch in "+"("DiscreteDistribution","DiscreteDistribution") as spotted by christoph.dalitz@hs-niederrhein.de
+
+
+##############
 v 2.9.2
 ##############
 under the hood:

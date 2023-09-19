@@ -50,6 +50,9 @@ flat.LCD <- function(..., mixCoeff = NULL, withgaps = getdistrOption("withgaps")
     finSupport <- c(TRUE,TRUE)
     if(l.d>0){
        mixDistr.dfs <- sapply(mixDistr.d, function(x) x@.finSupport)
+       ## 20230720: detected by Christoph Dalitz <christoph.dalitz@hs-niederrhein.de>
+	   ## can be a vector if the list elements are all Dirac distributions 
+	   if(is.null(dim(mixDistr.dfs))) mixDistr.dfs <- matrix(mixDistr.dfs,nrow=1)
        finSupport <- apply(mixDistr.dfs,1,all)
     }
     if(l.c){

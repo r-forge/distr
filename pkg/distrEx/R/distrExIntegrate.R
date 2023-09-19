@@ -1,4 +1,4 @@
-# Gauﬂ-Legendre abscissas and weights
+# Gauss-Legendre abscissas and weights
 # cf. for example Numerical Recipies in C (1992), p. 152
 
 #implementation in S:
