@@ -152,7 +152,7 @@ distrExIntegrate <- function(f, lower, upper, subdivisions = 100,
                   abs.tol = abs.tol, stop.on.error = stop.on.error), dotsInt)),
                   silent = TRUE)
 
-    # if integrate fails => Gauß-Legendre integration
+    # if integrate fails => Gauss-Legendre integration
     if(!is(res,"try-error")){
        val <- res$value
        if(diagnostic){
