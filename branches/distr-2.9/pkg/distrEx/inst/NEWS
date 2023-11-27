@@ -26,7 +26,8 @@ under the hood:
 + transformed CITATION file to new format, i.e., bibentry() instead of citEntry(),
         c(as.person( .... ), as.person( .... ), ...), instead of 
 		as.personList(....) 
-+ converted encoding to UTF-8
++ changed latin1 to UTF-8 encoding as requested by CRAN since latin1 
+  encoding will be deprecated.
    
 ##############
 v 2.8
