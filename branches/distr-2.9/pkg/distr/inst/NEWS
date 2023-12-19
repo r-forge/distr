@@ -17,7 +17,9 @@ bug fixes
   (as needed), 
 + fixed a glitch in "+"("DiscreteDistribution","DiscreteDistribution") as 
   spotted by christoph.dalitz@hs-niederrhein.de
-
++ fixed some documentation glitches in internal .Rd files as noted in a mail
+  by K. Hornik, Dec, 15, 2023, with some helpful hints by Michael Lawrence
+  in a mail Dec, 19, 2023
 
 ##############
 v 2.9.2
