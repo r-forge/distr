@@ -834,6 +834,9 @@ return(f)
  
  h <- diff(x)
  l <- length(x)
+  
+ ### 20240127
+ if(l < 3) stop("Too few grid points for .primefun.")
 
  xm <- (x[-l]+x[-1])/2
 
@@ -862,6 +865,10 @@ return(f)
 
 .csimpsum <- function(fx){
  l <- length(fx)
+
+ ### 20240127
+ if(l < 3) stop("Too few grid points for .csimpsum.")
+
  l2 <- l%/%2
  if (l%%2 == 0) {
      fx <- c(fx[1:l2],(fx[l2]+fx[l2+1])/2,fx[(l2+1):l])
@@ -883,7 +890,9 @@ return(f)
   if (Cont){
          mfun <- if (is.null (myPf)) approxfun else myPf
          l <- length(x)
-         if ((l%%2==0)&& is.null(myPf)){
+         ### 20240127
+        if (l < 3) stop("Too few grid points for .makePNew.")
+        if ((l%%2==0)&& is.null(myPf)){
                l2 <- l/2
                if (is.null(pxl))
                    x.l <- c(x[1:l2],(x[l2]+x[l2+1])/2,x[(l2+1):l])
@@ -1005,6 +1014,7 @@ return(f)
             rm(pnew, qnew, dnew, rnew)
             object
           }
+
 .expm.c <- function(e1){
             gapsnew <- if(is.null(e1@gaps)) NULL else exp(e1@gaps)
 
@@ -1047,6 +1057,7 @@ return(f)
             rm(pnew, qnew, dnew, rnew)
             object
           }
+
 .logm.d <- function(e1){
             supportnew <- log(e1@support)
 
@@ -1071,6 +1082,7 @@ return(f)
             rm(pnew, qnew, dnew, rnew)
             object
           }
+
 .logm.c <- function(e1){
             gapsnew <- if(is.null(e1@gaps)) NULL else log(e1@gaps)
 

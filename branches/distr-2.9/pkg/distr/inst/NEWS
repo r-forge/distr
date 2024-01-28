@@ -21,6 +21,12 @@ bug fixes
   by K. Hornik, Dec, 15, 2023, with some helpful hints by Michael Lawrence
   in a mail Dec, 19, 2023
 
+under the hood:
++ in changes in R-Core in the methods package, internal calls to new()
+  were prepended by a NAMESPACE qualifier methods:: in Dec 2023;
+  we had to accomodate for this in our initialize methods; for details
+  see ll.64-100 in code file initialize.R
+
 ##############
 v 2.9.2
 ##############
