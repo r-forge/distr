@@ -2,7 +2,7 @@ citHeader("To cite package distrEllipse in publications use:")
 
 citEntry(entry="Article",
          title = "S4 Classes for Distributions",
-         author = personList(as.person("P. Ruckdeschel"),
+         author = c(as.person("P. Ruckdeschel"),
                         as.person("M. Kohl"),
                         as.person("T. Stabla"),
                         as.person("F. Camphausen")),

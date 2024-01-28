@@ -1,7 +1,7 @@
 citHeader("To cite package distrTeach in publications use:")
 
 citEntry(entry = "TechReport",
-         author = personList(as.person("P. Ruckdeschel"),
+         author = c(as.person("P. Ruckdeschel"),
                         as.person("M. Kohl"),
                         as.person("T. Stabla"),
                         as.person("F. Camphausen")),

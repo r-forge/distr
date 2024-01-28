@@ -2,7 +2,7 @@ citHeader("To cite distrMod in publications use:")
 
 citEntry(entry = "Article",
   title        = "{R} Package {distrMod}: {S}4 Classes and Methods for Probability Models",
-  author       = personList(as.person("Matthias Kohl"),
+  author       = c(as.person("Matthias Kohl"),
                    as.person("Peter Ruckdeschel")),
   journal      = "Journal of Statistical Software",
   year         = "2010",

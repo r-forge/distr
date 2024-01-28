@@ -2,7 +2,7 @@ citHeader("To cite package distrDoc (and other packages of the distr family of p
 
 citEntry(entry="Article",
          title = "S4 Classes for Distributions",
-         author = personList(as.person("P. Ruckdeschel"),
+         author = c(as.person("P. Ruckdeschel"),
                         as.person("M. Kohl"),
                         as.person("T. Stabla"),
                         as.person("F. Camphausen")),
@@ -21,7 +21,7 @@ textVersion = paste("Ruckdeschel, P., Kohl, M., Stabla, T., & Camphausen, F. (20
 
 citEntry(entry = "Article",
   title        = "General Purpose Convolution Algorithm in {S}4 Classes by Means of FFT",
-  author       = personList(as.person("Peter Ruckdeschel"),
+  author       = c(as.person("Peter Ruckdeschel"),
                   as.person("Matthias Kohl")),
   journal      = "Journal of Statistical Software",
   year         = "2014",
