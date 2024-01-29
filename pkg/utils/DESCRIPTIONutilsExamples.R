@@ -428,3 +428,22 @@ changeDescription(startDir = "C:/rtest/distr",names=Names,
 updateHTMLpages(pkgNames ="distrMod", pkgVersions = "2.8.4")
 }
 
+if(FALSE){## nur distr Version 2.9.3 in trunk
+Pkgs <- c("distr")
+Names <- c("Version")    ## 20240127
+Values <- matrix(c("2.9.3"),1,length(Pkgs))
+colnames(Values) <- Pkgs
+rownames(Values)  <- Names
+changeDescription(startDir = "C:/rtest/distr",names=Names,
+                  pkgs=Pkgs, values=Values)
+updateHTMLpages(pkgNames ="distrMod", pkgVersions = "2.9.3")
+
+Pkgs <- c("RobAStRDA")
+Names <- c("Version")    ## 20240127
+Values <- matrix(c("1.2.1"),1,length(Pkgs))
+colnames(Values) <- Pkgs
+rownames(Values)  <- Names
+changeDescription(startDir = "C:/rtest/robast",names=Names,
+                  pkgs=Pkgs, values=Values)
+}
+
