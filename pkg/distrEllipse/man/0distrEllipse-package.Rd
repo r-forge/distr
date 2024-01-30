@@ -12,15 +12,15 @@ contoured distributions (based on package distr).
 \details{
 \tabular{ll}{
 Package: \tab distrEllipse \cr
-Version: \tab 2.8.1 \cr
-Date: \tab 2022-11-12 \cr
+Version: \tab 2.8.2 \cr
+Date: \tab 2024-01-30 \cr
 Depends: \tab R(>= 3.4), methods, graphics, mvtnorm, setRNG(>= 2006.2-1), distr(>= 2.8.0),distrEx(>= 2.8.0), distrSim(>= 2.2) \cr
 Suggests: \tab distrMod(>= 2.8.0), distrTEst(>= 2.2) \cr
 Imports: \tab startupmsg, stats \cr
 ByteCompile: \tab yes \cr
 License: \tab LGPL-3 \cr
 URL: \tab https://distr.r-forge.r-project.org/\cr
-VCS/SVNRevision: \tab 1380 \cr
+VCS/SVNRevision: \tab 1427 \cr
 }
 }
 \section{Classes}{

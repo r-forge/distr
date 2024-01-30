@@ -13,15 +13,15 @@ packages.
 \details{
 \tabular{ll}{
 Package: \tab distrRmetrics \cr
-Version: \tab 2.8.1 \cr
-Date: \tab 2022-11-12 \cr
+Version: \tab 2.8.2 \cr
+Date: \tab 2024-01-30 \cr
 Depends: \tab R(>= 3.4), methods, distr(>= 2.4), fBasics(>= 270.73), fGarch(>= 270.73) \cr
 Suggests: \tab distrEx(>= 2.4), distrMod(>= 2.4) \cr
 Imports: startupmsg  \cr
 ByteCompile: \tab yes \cr
 License: \tab LGPL-3 \cr
 URL: \tab https://distr.r-forge.r-project.org/\cr
-VCS/SVNRevision: \tab 1380 \cr
+VCS/SVNRevision: \tab 1427 \cr
 }
 }
 \section{Classes}{
