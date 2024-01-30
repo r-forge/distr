@@ -1,6 +1,6 @@
 Package: distrDoc
-Version: 2.8.1
-Date: 2022-11-12
+Version: 2.8.2
+Date: 2024-01-30
 Title: Documentation for 'distr' Family of R Packages
 Description: Provides documentation in form of a common vignette to packages 'distr',
             'distrEx', 'distrMod', 'distrSim', 'distrTEst', 'distrTeach', and 'distrEllipse'.
@@ -22,4 +22,4 @@ License: LGPL-3
 URL: http://distr.r-forge.r-project.org/
 LastChangedDate: {$LastChangedDate$}
 LastChangedRevision: {$LastChangedRevision$}
-VCS/SVNRevision: 1380
+VCS/SVNRevision: 1429

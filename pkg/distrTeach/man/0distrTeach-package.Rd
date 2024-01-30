@@ -19,15 +19,15 @@ as well as a Tcl/Tk based demo for\code{illustrateCLT}
 \details{
 \tabular{ll}{
 Package: \tab distrTeach \cr
-Version: \tab 2.9.0 \cr
-Date: \tab 2022-11-12 \cr
+Version: \tab 2.9.1 \cr
+Date: \tab 2024-01-30 \cr
 Depends: \tab R(>= 3.4), methods, distr(>= 2.2), distrEx(>= 2.2) \cr
 Suggests: \tab tcltk \cr
 Imports: \tab startupmsg, grDevices, graphics, stats \cr
 LazyLoad: \tab yes \cr
 License: \tab LGPL-3 \cr
 URL: \tab http://distr.r-forge.r-project.org/\cr
-VCS/SVNRevision: \tab 1380 \cr
+VCS/SVNRevision: \tab 1429 \cr
 }
 }
 \section{Classes}{
