@@ -16,7 +16,6 @@ Imports: stats, grDevices, utils, MASS
 Enhances: RobAStBase
 VignetteBuilder: knitr
 ByteCompile: yes
-Encoding: UTF-8
 License: LGPL-3
 URL: https://r-forge.r-project.org/projects/distr/
 LastChangedDate: {$LastChangedDate$}

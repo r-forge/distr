@@ -11,7 +11,6 @@ Authors@R: c(person("Matthias", "Kohl", role=c("cre", "cph"),
             "cph")))
 ByteCompile: yes
 License: LGPL-3
-Encoding: UTF-8
 URL: https://r-forge.r-project.org/projects/distr/
 LastChangedDate: {$LastChangedDate$}
 LastChangedRevision: {$LastChangedRevision$}

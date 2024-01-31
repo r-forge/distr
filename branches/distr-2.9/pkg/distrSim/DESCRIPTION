@@ -14,7 +14,6 @@ Authors@R: c(person("Florian", "Camphausen", role="ctb", comment="contributed as
             role="ctb", comment="contributed as student in the initial phase --2005"))
 ByteCompile: yes
 License: LGPL-3
-Encoding: UTF-8
 URL: https://r-forge.r-project.org/projects/distr/
 LastChangedDate: {$LastChangedDate$}
 LastChangedRevision: {$LastChangedRevision$}

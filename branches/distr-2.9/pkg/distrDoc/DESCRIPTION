@@ -17,7 +17,6 @@ Imports: distr(>= 2.8.0), distrEx(>= 2.8.0), distrSim(>= 2.2.0), distrTEst(>= 2.
 Suggests: Biobase, knitr
 VignetteBuilder: knitr
 ByteCompile: yes
-Encoding: UTF-8
 License: LGPL-3
 URL: https://r-forge.r-project.org/projects/distr/
 LastChangedDate: {$LastChangedDate$}
