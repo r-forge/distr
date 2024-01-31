@@ -14,7 +14,6 @@ Suggests: ismev, evd,
 Enhances: RobExtremes
 ByteCompile: yes
 License: LGPL-3
-Encoding: UTF-8
 URL: http://distr.r-forge.r-project.org/
 LastChangedDate: {$LastChangedDate$}
 LastChangedRevision: {$LastChangedRevision$}
