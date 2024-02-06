@@ -8,9 +8,11 @@ Depends: R(>= 3.4), methods, graphics, setRNG(>= 2006.2-1), distr(>= 2.8.0)
 Suggests: distrEx(>= 2.8.0)
 Imports: startupmsg, stats, grDevices
 Authors@R: c(person("Florian", "Camphausen", role="ctb", comment="contributed as student in
-            the initial phase --2005"), person("Matthias", "Kohl", role=c("aut", "cph")),
+            the initial phase --2005"), person("Matthias", "Kohl", role=c("aut", "cph"), 
+			comment = c(ORCID = "0000-0001-9514-8910")),
             person("Peter", "Ruckdeschel", role=c("cre", "cph"),
-            email="peter.ruckdeschel@uni-oldenburg.de"), person("Thomas", "Stabla",
+            email="peter.ruckdeschel@uni-oldenburg.de", 
+			comment = c(ORCID = "0000-0001-7815-4809")), person("Thomas", "Stabla",
             role="ctb", comment="contributed as student in the initial phase --2005"))
 ByteCompile: yes
 License: LGPL-3

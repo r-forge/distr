@@ -8,10 +8,13 @@ Depends: R(>= 3.4), methods, distr(>= 2.8.0), distrEx(>= 2.8.0)
 Suggests: tcltk
 Imports: startupmsg, grDevices, graphics, stats
 Authors@R: c(person("Eleonora", "Feist", role="ctb", comment = "contributed as student in the
-            initial phase --2008"), person("Matthias", "Kohl", role=c("aut", "cph")),
+            initial phase --2008"), person("Anja", "Hueller", role="ctb",
+            comment = "contributed as student in the initial phase --2008"), 
+			person("Matthias", "Kohl", role=c("aut", "cph"), 
+			comment = c(ORCID = "0000-0001-9514-8910")),
             person("Peter", "Ruckdeschel", role=c("cre", "cph"),
-            email="peter.ruckdeschel@uni-oldenburg.de"), person("Anja", "Hueller", role="ctb",
-            comment = "contributed as student in the initial phase --2008"))
+            email="peter.ruckdeschel@uni-oldenburg.de", 
+			comment = c(ORCID = "0000-0001-7815-4809")))
 ByteCompile: yes
 License: LGPL-3
 URL: https://r-forge.r-project.org/projects/distr/

@@ -8,7 +8,8 @@ Depends: R(>= 3.4), methods, distr(>= 2.8.0), fBasics(>= 270.73), fGarch(>= 270.
 Suggests: distrEx(>= 2.8.0), distrMod(>= 2.8.0)
 Imports: startupmsg
 Authors@R: person("Peter", "Ruckdeschel", role=c("cre", "cph", "aut"),
-            email="peter.ruckdeschel@uni-oldenburg.de")
+            email="peter.ruckdeschel@uni-oldenburg.de", 
+			comment = c(ORCID = "0000-0001-7815-4809"))
 ByteCompile: yes
 License: LGPL-3
 URL: https://r-forge.r-project.org/projects/distr/
