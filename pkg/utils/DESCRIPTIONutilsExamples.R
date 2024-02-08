@@ -526,9 +526,17 @@ rownames(Values)  <- Names
 changeDescription(startDir = "C:/rtest/robast",names=Names,
                   pkgs=Pkgs, values=Values)
 
+Pkgs <- c("ROptEst")
+Names <- c("Version")    ## 20240127
+Values <- matrix(c("1.3.2"),1,length(Pkgs))
+colnames(Values) <- Pkgs
+rownames(Values)  <- Names
+changeDescription(startDir = "C:/rtest/robast",names=Names,
+                  pkgs=Pkgs, values=Values)
+
 Pkgs <- c("RobExtremes")
 Names <- c("Version")    ## 20240127
-Values <- matrix(c("1.2.2"),1,length(Pkgs))
+Values <- matrix(c("1.3.0"),1,length(Pkgs))
 colnames(Values) <- Pkgs
 rownames(Values)  <- Names
 changeDescription(startDir = "C:/rtest/robast",names=Names,
