@@ -298,18 +298,21 @@ Matthias Kohl \email{Matthias.Kohl@stamats.de}\cr
 \references{
 P. Ruckdeschel, M. Kohl, T. Stabla, F. Camphausen (2006):
 S4 Classes for Distributions, \emph{R News}, \emph{6}(2), 2-6.
-\url{https://CRAN.R-project.org/doc/Rnews/Rnews_2006-2.pdf}
+\url{https://CRAN.R-project.org/doc/Rnews/Rnews_2006-2.pdf}.
+
 P. Ruckdeschel and M. Kohl (2014):
    General purpose convolution algorithm for distributions
   in S4-Classes by means of FFT. \emph{J. Statist. Softw.}
-  \bold{59}(4): 1-25.
-a vignette for packages \pkg{distr}, \pkg{distrSim}, \pkg{distrTEst}, and
+  \bold{59}(4): 1-25. \doi{10.18637/jss.v059.i04}.
+
+A vignette for packages \pkg{distr}, \pkg{distrSim}, \pkg{distrTEst}, and
 \pkg{distrEx} is included into the mere documentation package \pkg{distrDoc}
 and may be called by
-\code{require("distrDoc");vignette("distr")}
+\code{require("distrDoc"); vignette("distr")}
 %a more detailed manual for \pkg{distr}, \pkg{distrSim}, \pkg{distrTEst}, and \pkg{distrEx} may be downloaded from
 %\url{http://www.uni-bayreuth.de/departments/math/org/mathe7/DISTR/distr.pdf}
-a homepage to this package is available under\cr
+
+A homepage to this package is available under\cr
 \url{https://distr.r-forge.r-project.org/}
 }
 \section{Start-up-Banner}{

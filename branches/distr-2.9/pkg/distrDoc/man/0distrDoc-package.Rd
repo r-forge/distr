@@ -84,6 +84,34 @@ Note: The first two numbers of package versions do not necessarily reflect
  distrXXX family as a whole in order to ease updating "depends"
  information.
 }
+
+\references{
+P. Ruckdeschel, M. Kohl, T. Stabla, F. Camphausen (2006):
+S4 Classes for Distributions, \emph{R News}, \emph{6}(2), 2-6.
+\url{https://CRAN.R-project.org/doc/Rnews/Rnews_2006-2.pdf}.
+
+M. Kohl and P. Ruckdeschel (2010):
+R Package distrMod: S4 Classes and Methods for Probability Models.
+Journal of Statistical Software, 35(10), 1-27.
+\doi{10.18637/jss.v035.i10}
+(see also \code{vignette("distrMod")})
+
+P. Ruckdeschel and M. Kohl (2014):
+   General purpose convolution algorithm for distributions
+  in S4-Classes by means of FFT. \emph{J. Statist. Softw.}
+  \bold{59}(4): 1-25. \doi{10.18637/jss.v059.i04}.
+
+A vignette for packages \pkg{distr}, \pkg{distrSim}, \pkg{distrTEst}, and
+\pkg{distrEx} is included into the mere documentation package \pkg{distrDoc}
+and may be called by
+\code{require("distrDoc"); vignette("distr")}
+
+%a more detailed manual for \pkg{distr}, \pkg{distrSim}, \pkg{distrTEst}, and \pkg{distrEx} may be downloaded from
+%\url{http://www.uni-bayreuth.de/departments/math/org/mathe7/DISTR/distr.pdf}
+
+A homepage to this package is available under\cr
+\url{https://distr.r-forge.r-project.org/}
+}
 \keyword{package}
 \keyword{utilities}
 \keyword{documentation}

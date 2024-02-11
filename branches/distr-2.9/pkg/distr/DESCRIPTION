@@ -2,7 +2,11 @@ Package: distr
 Version: 2.9.4
 Date: 2024-01-28
 Title: Object Oriented Implementation of Distributions
-Description: S4-classes and methods for distributions.
+Description: S4-classes and methods for distributions as described in 
+Ruckdeschel et al. (2006) <https://cran.r-project.org/doc/Rnews/Rnews_2006-2.pdf>.
+The backbone for the underlying arithmetics for distributions is a general purpose
+convolution algorithm for distributions as documented in 
+Ruckdeschel and Kohl (2014) <doi:10.18637/jss.v059.i04>.
 Authors@R: c(person("Florian", "Camphausen", role="ctb", comment="contributed as student in
             the initial phase --2005"), person("Matthias", "Kohl", role=c("aut", "cph"), 
 			comment = c(ORCID = "0000-0001-9514-8910")),

@@ -4,6 +4,8 @@ Date: 2019-03-13
 Title: Documentation for 'distr' Family of R Packages
 Description: Provides documentation in form of a common vignette to packages 'distr',
             'distrEx', 'distrMod', 'distrSim', 'distrTEst', 'distrTeach', and 'distrEllipse'.
+			General ideas are also described in Ruckdeschel et al. (2006) 
+			<https://cran.r-project.org/doc/Rnews/Rnews_2006-2.pdf>. 
 Authors@R: c(person("Florian", "Camphausen", role="ctb", comment="contributed as student to
             the documented packages in the initial phase --2005"), person("Matthias", "Kohl", 
 			role=c("aut", "cph"), comment = c(ORCID = "0000-0001-9514-8910")),
