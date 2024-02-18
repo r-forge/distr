@@ -66,7 +66,9 @@ getRNG.default <- function(e=NULL)
 
 random.number.test <- function()
  {cat("Random number generator tests ...")
-  if (is.R())  
+#  'is.R' is deprecated in R 4.3.3 2024-02-02
+#  if (is.R())  
+  if (TRUE)  
      {test.seed<- 979   #previous to R 1.0.0: c( 979, 1479, 1542) 
       # values from 0.49 beta
       #test.valueU <-c(5.693354055333957e-01,1.051357751852140e-01,
@@ -91,7 +93,7 @@ random.number.test <- function()
       test.valueN <- c(0.2947980960879867, 0.5315740209738240,
             -0.7439218830522146, -0.9861002105572579, -0.3542773118879623)
      }
-  if (!is.R()) 
+  if (!TRUE) 
      {# above should really be if (is.Splus()) 
       test.seed<- c(37, 39, 39, 4, 7, 2, 27, 58, 38, 15, 32, 2)
       test.valueU.S <- c(0.4299328043125570, 0.3092006836086512,
@@ -104,7 +106,7 @@ random.number.test <- function()
   on.exit(setRNG(old.seed))
 
   ok <- TRUE
-if ( !is.R())
+if ( !TRUE)
  {if (1e-14 < max(abs(runif(5)-test.valueU.S)))
     {warning("The default runif number generator has been changed.")
      ok <- FALSE
@@ -117,7 +119,7 @@ if ( !is.R())
      ok <- FALSE
     }
  }
-if ( is.R())
+if ( TRUE)
  {if (as.numeric(version$major)+0.1*as.numeric(version$minor) > 1.62 )
   {if (1e-14 < max(abs(runif(5)-test.valueU)))
     {warning("The default runif number generator has been changed.")

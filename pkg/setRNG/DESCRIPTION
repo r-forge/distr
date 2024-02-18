@@ -1,5 +1,5 @@
 Package: setRNG
-Version: 2015.7-1
+Version: 2024.2-1
 Title: Set (Normal) Random Number Generator and Seed
 Description: Provides utilities to help set and record the setting of
 	the seed and the uniform and normal generators used when a random
