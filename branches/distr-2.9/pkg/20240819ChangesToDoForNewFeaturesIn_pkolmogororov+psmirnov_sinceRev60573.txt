@@ -1,0 +1,60 @@
+pkstwo wird ersetzt durch K2l
+
+    CALLDEF(pSmirnov2x, 3),
+    CALLDEF(pKolmogorov2x, 2),
+    CALLDEF(pKS2, 2),
+
+
+aus neu statsR.h
+SEXP psmirnov_exact(SEXP sq, SEXP sm, SEXP sn, SEXP sz, SEXP stwo, SEXP slower);
+SEXP pkolmogorov_two_exact(SEXP sq, SEXP sn);
+SEXP pkolmogorov_two_limit(SEXP sq, SEXP slower, SEXP stol);
+
+
+
+
+    CALLDEF(pkolmogorov_two_exact, 2),
+    CALLDEF(pkolmogorov_two_limit, 3),
+    CALLDEF(psmirnov_exact, 6),
+
+
+
+
+SEXP pkolmogorov_two_limit(SEXP sq, SEXP slower, SEXP stol)
+statt
+SEXP attribute_hidden pKS2(SEXP statistic, SEXP stol)
+
+
+
+SEXP psmirnov_exact(SEXP sq, SEXP sm, SEXP sn, SEXP sz,
+		    SEXP stwo, SEXP slower) {
+statt
+/* Two-sided two-sample */
+SEXP attribute_hidden pSmirnov2x(SEXP statistic, SEXP snx, SEXP sny)
+
+
+
+/* One-sample two-sided exact distribution */
+SEXP pkolmogorov_two_exact(SEXP sq, SEXP sn)
+{
+    int n = asInteger(sn), i;
+    SEXP ans;
+
+    PROTECT(ans = allocVector(REALSXP, LENGTH(sq)));
+    for(i = 0; i < LENGTH(sq); i++) {
+	REAL(ans)[i] = K2x(n, REAL(sq)[i]);
+    }
+    UNPROTECT(1);
+
+    return ans;
+}
+
+statt
+/* The two-sided one-sample 'exact' distribution */
+SEXP attribute_hidden pKolmogorov2x(SEXP statistic, SEXP sn)
+{
+    int n = asInteger(sn);
+    double st = asReal(statistic), p;
+    p = K(n, st);
+    return ScalarReal(p);
+}
