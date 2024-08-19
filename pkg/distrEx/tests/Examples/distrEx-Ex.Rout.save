@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2022-09-25 r82916 ucrt) -- "Unsuffered Consequences"
-Copyright (C) 2022 The R Foundation for Statistical Computing
-Platform: x86_64-w64-mingw32/x64 (64-bit)
+R Under development (unstable) (2024-08-17 r87027 ucrt) -- "Unsuffered Consequences"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -24,14 +24,14 @@ Type 'q()' to quit R.
 > library('distrEx')
 Loading required package: distr
 Loading required package: startupmsg
-:startupmsg>  Utilities for Start-Up Messages (version 0.9.6)
+:startupmsg>  Utilities for Start-Up Messages (version 0.9.6.1)
 :startupmsg> 
 :startupmsg>  For more information see ?"startupmsg",
 :startupmsg>  NEWS("startupmsg")
 
 Loading required package: sfsmisc
 :distr>  Object Oriented Implementation of Distributions (version
-:distr>  2.9.0)
+:distr>  2.9.4)
 :distr> 
 :distr>  Attention: Arithmetics on distribution objects are
 :distr>  understood as operations on corresponding random variables
@@ -56,7 +56,7 @@ The following objects are masked from 'package:stats':
 
     df, qqplot, sd
 
-:distrEx>  Extensions of Package 'distr' (version 2.9.0)
+:distrEx>  Extensions of Package 'distr' (version 2.9.3)
 :distrEx> 
 :distrEx>  Note: Packages "e1071", "moments", "fBasics" should be
 :distrEx>  attached /before/ package "distrEx". See
@@ -835,7 +835,7 @@ function (n, cond, ...)
     }
     0 + cond %*% 1 + 1 * r(n, ...)
 }
-<environment: 0x0000025732a68a18>
+<environment: 0x00000262e422b858>
 > d(D1)
 function (x, cond, log = FALSE, ...) 
 {
@@ -857,7 +857,7 @@ function (x, cond, log = FALSE, ...)
     else d0 <- d0/1
     return(d0)
 }
-<environment: 0x0000025732a68a18>
+<environment: 0x00000262e422b858>
 > p(D1)
 function (q, cond, lower.tail = TRUE, log.p = FALSE, ...) 
 {
@@ -884,7 +884,7 @@ function (q, cond, lower.tail = TRUE, log.p = FALSE, ...)
             p0 <- log(p0)
     return(p0)
 }
-<environment: 0x0000025732a68a18>
+<environment: 0x00000262e422b858>
 > q(D1)
 function (p, cond, lower.tail = TRUE, log.p = FALSE, ...) 
 {
@@ -908,7 +908,7 @@ function (p, cond, lower.tail = TRUE, log.p = FALSE, ...)
         argList <- c(argList, dots)
     1 * do.call(q, argList) + 0 + as.vector(cond %*% 1)
 }
-<environment: 0x0000025732a68a18>
+<environment: 0x00000262e422b858>
 > ## in RStudio or Jupyter IRKernel, use q.l(.)(.) instead of q(.)(.)
 > param(D1)
 name:	parameter of a linear regression model
@@ -1064,7 +1064,7 @@ minimal asym. total variation distance
 > 
 > OAsymTotalVarDist(rbinom(50, size = 20, prob = 0.5), Binom(size = 20, prob = 0.5))
 minimal asym. total variation distance 
-                             0.3742073 
+                             0.3742072 
 > 
 > 
 > 
@@ -1635,7 +1635,7 @@ see 'distrARITH()'; for switching off this warning see '?distroptions'
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  7.06 0.33 7.42 NA NA 
+Time elapsed:  8.72 0.42 9.28 NA NA 
 > grDevices::dev.off()
 null device 
           1 
