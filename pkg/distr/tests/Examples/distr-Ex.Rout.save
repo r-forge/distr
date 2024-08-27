@@ -2016,8 +2016,8 @@ function(x, log = FALSE)
                           d0 <-    log(df1(x))-log(stand)
                      else d0 <- df1(x) / stand
                      return (d0)}
-<bytecode: 0x000001bdc208d238>
-<environment: 0x000001bdc7984f28>
+<bytecode: 0x0000021896e44350>
+<environment: 0x000002189c66ef20>
 
 $pfun
 function (q, lower.tail = TRUE, log.p = FALSE) 
@@ -2032,7 +2032,7 @@ function (q, lower.tail = TRUE, log.p = FALSE)
     else p0/nm
     return(p0)
 }
-<environment: 0x000001bdc2d8cbc8>
+<environment: 0x0000021897b47d50>
 
 $qfun
 function (p, lower.tail = TRUE, log.p = FALSE) 
@@ -2050,7 +2050,7 @@ function (p, lower.tail = TRUE, log.p = FALSE)
     else q.l0(1 - p01)
     return(as.numeric(q0))
 }
-<environment: 0x000001bdc2d3a7f0>
+<environment: 0x0000021897ac0080>
 
 > ## IGNORE_RDIFF_END
 > rp2 <- function(n){rpois(n, lambda = 1)^2}
@@ -2091,8 +2091,8 @@ function(x, log = FALSE)
                           d0 <-    log(df1(x))-log(stand)
                      else d0 <- df1(x) / stand
                      return (d0)}
-<bytecode: 0x000001bdc208d238>
-<environment: 0x000001bdc2b5ea18>
+<bytecode: 0x0000021896e44350>
+<environment: 0x0000021897919d98>
 
 $pfun
 function (q, lower.tail = TRUE, log.p = FALSE) 
@@ -2107,7 +2107,7 @@ function (q, lower.tail = TRUE, log.p = FALSE)
     else p0/nm
     return(p0)
 }
-<environment: 0x000001bdc283b2a8>
+<environment: 0x00000218975c1698>
 
 $qfun
 function (p, lower.tail = TRUE, log.p = FALSE) 
@@ -2125,7 +2125,7 @@ function (p, lower.tail = TRUE, log.p = FALSE)
     else q.l0(1 - p01)
     return(as.numeric(q0))
 }
-<environment: 0x000001bdc5d04b20>
+<environment: 0x0000021897c8ed88>
 
 > ## IGNORE_RDIFF_END
 > rp2 <- function(n){rpois(n, lambda = 1)^2}
@@ -3810,13 +3810,13 @@ see 'distrARITH()'; for switching off this warning see '?distroptions'
 > ## IGNORE_RDIFF_BEGIN
 > system.time(r(F)(10^6))
    user  system elapsed 
-   0.30    0.01    0.31 
+   0.29    0.01    0.31 
 > ## IGNORE_RDIFF_END
 > simplifyr(F, size = 10^6)
 > ## IGNORE_RDIFF_BEGIN
 > system.time(r(F)(10^6))
    user  system elapsed 
-   0.10    0.02    0.10 
+   0.09    0.00    0.10 
 > ## IGNORE_RDIFF_END
 > 
 > 
@@ -3853,7 +3853,7 @@ setReplaceMethod("b", "testclass", function(object, value){ object@b <- value; o
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  23.82 1.72 26 NA NA 
+Time elapsed:  23.08 1.97 25.3 NA NA 
 > grDevices::dev.off()
 pdf 
  19 
