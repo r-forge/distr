@@ -18,7 +18,9 @@ distrEllipseMASK(library = NULL)
 
 \author{Peter Ruckdeschel \email{peter.ruckdeschel@uni-oldenburg.de}}
 \examples{
+## IGNORE_RDIFF_BEGIN
 distrEllipseMASK()
+## IGNORE_RDIFF_END
 }
 \keyword{programming}
 \keyword{distribution}
