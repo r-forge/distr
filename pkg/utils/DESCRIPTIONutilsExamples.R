@@ -508,6 +508,38 @@ rownames(Values)  <- Names
 changeDescription(startDir = "C:/rtest/robast",names=Names,
                   pkgs=Pkgs, values=Values)
 
+Pkgs <- c("ROptEst")
+Names <- c("Version")    ## 20240829
+Values <- matrix(c("1.3.3"),1,length(Pkgs))
+colnames(Values) <- Pkgs
+rownames(Values)  <- Names
+changeDescription(startDir = "C:/rtest/robast",names=Names,
+                  pkgs=Pkgs, values=Values)
+
+Pkgs <- c("ROptEst")
+Names <- c("Version")    ## 20240829
+Values <- matrix(c("1.3.4"),1,length(Pkgs))
+colnames(Values) <- Pkgs
+rownames(Values)  <- Names
+changeDescription(startDir = "C:/rtest/robast/branches/robast-1.3",names=Names,
+                  pkgs=Pkgs, values=Values)
+
+Pkgs <- c("RobExtremes")
+Names <- c("Version")    ## 20240829
+Values <- matrix(c("1.3.1"),1,length(Pkgs))
+colnames(Values) <- Pkgs
+rownames(Values)  <- Names
+changeDescription(startDir = "C:/rtest/robast",names=Names,
+                  pkgs=Pkgs, values=Values)
+
+Pkgs <- c("RobExtremes")
+Names <- c("Version")    ## 20240829
+Values <- matrix(c("1.3.2"),1,length(Pkgs))
+colnames(Values) <- Pkgs
+rownames(Values)  <- Names
+changeDescription(startDir = "C:/rtest/robast/branches/robast-1.3",names=Names,
+                  pkgs=Pkgs, values=Values)
+
 Pkgs <- c("distr")
 Names <- c("Version")    ## 20240819
 Values <- matrix(c("2.9.4"),1,length(Pkgs))
