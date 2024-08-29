@@ -8,6 +8,14 @@
  information)
 
 ##############
+v 2.9.3
+##############
+
+under the hood:
+fixed two off-going \link{} targets to qqbounds (with missing package anchors) 
+in Rd files to qqplot() and returnlevelplot()
+
+##############
 v 2.9.2
 ##############
 
