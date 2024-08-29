@@ -1,7 +1,7 @@
 
-R version 3.0.1 Patched (2013-09-02 r63805) -- "Good Sport"
-Copyright (C) 2013 The R Foundation for Statistical Computing
-Platform: i386-w64-mingw32/i386 (32-bit)
+R Under development (unstable) (2024-08-17 r87027 ucrt) -- "Unsuffered Consequences"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -21,33 +21,21 @@ Type 'q()' to quit R.
 > source(file.path(R.home("share"), "R", "examples-header.R"))
 > options(warn = 1)
 > options(pager = "console")
-> base::assign(".ExTimings", "startupmsg-Ex.timings", pos = 'CheckExEnv')
-> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
-> base::assign(".format_ptime",
-+ function(x) {
-+   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
-+   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
-+   options(OutDec = '.')
-+   format(x[1L:3L], digits = 7L)
-+ },
-+ pos = 'CheckExEnv')
-> 
-> ### * </HEADER>
 > library('startupmsg')
-:startupmsg>  Utilities for start-up messages (version 0.9)
+:startupmsg>  Utilities for Start-Up Messages (version 0.9.7)
 :startupmsg> 
 :startupmsg>  For more information see ?"startupmsg",
 :startupmsg>  NEWS("startupmsg")
 
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
 > cleanEx()
 > nameEx("StartupUtilities")
 > ### * StartupUtilities
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: StartupUtilities
 > ### Title: Utilities for start-up messages
 > ### Aliases: startupmsg infoShow TOBEDONE NEWS readVersionInformation
@@ -108,32 +96,174 @@ this is an ordinary message
 > ### reading information file utilities
 > readVersionInformation("stats")
 $ver
-[1] "3.0.1"
+[1] "4.5.0"
 
 $title
 [1] "The R Stats Package"
 
-> readURLInformation("stats")
-NULL
+> readURLInformation("MASS")
+[1] "http://www.stats.ox.ac.uk/pub/MASS4/"
 > ## for packages with URL file see e.g. dse1
-> pointertoNEWS("stats") ## no NEWS file;
-NULL
-> NEWS("stats") ## no NEWS file; 
-Warning in file.show(file.path(system.file(package = pkg, lib.loc = library),  :
-  file.show(): file 'C:/PROGRA~1/R/R-30~1.1PA/library/stats/NEWS' does not exist
+> pointertoNEWS("startupmsg") ## no NEWS file;
+[1] "NEWS(\"startupmsg\")"
+> 
+> ## IGNORE_RDIFF_BEGIN
+> 
+> NEWS("startupmsg") ## no NEWS file; 
+######################################################################
+#  News: to package startupmsg
+######################################################################
+
+##############
+v 0.9.7
+##############
+
+under the hood:
+with the help of K. Hornik identified spurious, platform dependent LF/CR issue
+and capsulated calls to infoShow() in Rd files by 
+## IGNORE_RDIFF_BEGIN
+## IGNORE_RDIFF_END
+
+##############
+v 0.9.6
+##############
+
+user-visible CHANGES:
++ DESCRIPTION tag SVNRevision changed to VCS/SVNRevision
+
+##############
+v 0.9
+##############
+
+user-visible CHANGES:
++ title changed to title style / capitalization
+
+GENERAL ENHANCEMENTS:
+
+under the hood:
+added .Rbuildignore
+
+BUGFIXES:
+
+##############
+v 0.8
+##############
+
+under the hood: 
++ startupmsg gains a namespace
++ added DESCRIPTION tag "ByteCompile" to all our packages
++ updating maintainer email address and URL.
++ deleted no longer needed chm folders
+
+##############
+v 0.7
+##############
+
+user-visible CHANGES:
+
++ new command TOBEDONE() --- similarly to NEWS() to access TOBEDONE file
+
+GENERAL ENHANCEMENTS:
+
++ added tests/Examples folder with file startupmsg-Ex.Rout.save to have
+  some automatic testing
++ added field "Encoding: latin1" to all DESCRIPTION files in order to avoid problems 
+  with e.g. Windows locale when svn replaces $LastChangedDate
++ added TOBEDONE (sic!) files for each package (by accident also in trunc; these are empty so far)
+
+##############
+v 0.6
+##############
+
+* Rd-style:
+  + several buglets detected with the fuzzier checking mechanism
+    cf [Rd] More intensive checking of R help files, Prof Brian Ripley, 09.01.2009 10:25) 
+       [Rd] Warning: missing text for item ... in \describe? , Prof Brian Ripley,
+
+##############
+v 0.5.3
+##############
+  
+  * new issuer 'mySMHandler' to cope with long package names and
+     variable "paper" widths acc. to getOption("width")
+     (automatically inserts line breaks...)
+  * moved license to LGPL-3
+
+  
+##############
+v 0.5
+##############
+
+* startup messages are now also of S3-class 'packageStartupMessage'
+  and hence may now also be suppressed by 
+  suppressPackageStartupMessages() (from package 'base')
+
+##############
+v 0.4
+##############
+
+* deleted: import "methods" from Namespace
+* included: argument "VIGNETTE" in function "buildStartupMessage"
+
+##############
+v 0.3
+##############
+
+* inserted references to the mail thread 
+  "Wishlist: 'quietly' argument for .onAttach() / .First.lib()"
+  on r-devel, April 2006 into seealso  
+
+##############
+v 0.2
+##############
+
+* abolished: S3 class StartupVersionMessage with corresponding constructor
+* abolished: call startupVersionMessage
+* abolished: control for linestarter (anyone could do this himself: 
+             + the developper using his own SMHandler 
+             + the user by specifying a suitable custom restart
+* abolished: wrapper onlyversionStartupMessages
+* abolished: modified output in startMessage
+
+* instead: extended S3 class StartupMessage by a slot 'type' with corresponding
+           accessor startupType
+* instead: onlytypeStartupMessages with an atypes argument to filter out 
+           types that are to be shown
+* instead: introduction of mystartMessage with a 
+* instead: startMessage now comes with a type argument
+* instead/new: SMHandler argument for mystartupMessage and buildStartupMessage
+               defaulting to mySMHandler
+* clarified: code to buildStartupMessage
+
+* new: separation into "general routines" documented in ?"startmsg"
+       and an illustration covering mystartupMessage and buildStartupMessage
+       documented in ?"mystartupMessage"
+* new: custom restart (idea: Seth Falcon)
+
+
+##############
+v 0.1
+##############
+
+* defined S3 classes StartupMessage, StartupVersionMessage with corresponding constructors
+* accessor startupPackage
+* wrappers suppressStartupMessages, onlyversionStartupMessages
+* calls startupMessage, startupVersionMessage
+* utilities readVersionInformation, readURLInformation, pointertoNEWS, infoShow, NEWS
+* main function buildStartupMessage (also controllable by options "StartupBanner" resp. "StartupLinestarter")
+   
 > ## for packages with NEWS file see e.g. randomForest, distr
 > 
+> ## IGNORE_RDIFF_END
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("StartupUtilities", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> 
 > cleanEx()
 > nameEx("myStartupUtilities")
 > ### * myStartupUtilities
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: myStartupUtilities
 > ### Title: Example functions to utilities for start-up messages
 > ### Aliases: mystartupMessage mySMHandler buildStartupMessage
@@ -147,7 +277,7 @@ Warning in file.show(file.path(system.file(package = pkg, lib.loc = library),  :
 > 
 > ## issuing of messages controlled by options()
 > buildStartupMessage(pkg="stats", msg) 
-:stats>  The R Stats Package (version 3.0.1)
+:stats>  The R Stats Package (version 4.5.0)
 :stats> 
 :stats>  Note that you may set global options by options() --- cf.
 :stats>  ?"options".
@@ -156,13 +286,13 @@ Warning in file.show(file.path(system.file(package = pkg, lib.loc = library),  :
 > suppressMessages(buildStartupMessage(pkg="stats", msg))
 > onlytypeStartupMessages(buildStartupMessage(pkg="stats", msg),
 +           atypes="version")
-The R Stats Package (version 3.0.1)
+The R Stats Package (version 4.5.0)
 
 > 
 > getOption("StartupBanner")
 NULL
 > buildStartupMessage(pkg="stats", msg)
-:stats>  The R Stats Package (version 3.0.1)
+:stats>  The R Stats Package (version 4.5.0)
 :stats> 
 :stats>  Note that you may set global options by options() --- cf.
 :stats>  ?"options".
@@ -175,7 +305,7 @@ NULL
 > options("StartupBanner"="complete");getOption("StartupBanner")
 [1] "complete"
 > buildStartupMessage(pkg="stats", msg)
-:stats>  The R Stats Package (version 3.0.1)
+:stats>  The R Stats Package (version 4.5.0)
 :stats> 
 :stats>  Note that you may set global options by options() --- cf.
 :stats>  ?"options".
@@ -184,60 +314,60 @@ NULL
 > options("StartupBanner"="something else");getOption("StartupBanner")
 [1] "something else"
 > buildStartupMessage(pkg="stats", msg)
-:stats>  The R Stats Package (version 3.0.1)
+:stats>  The R Stats Package (version 4.5.0)
 :stats> 
 > 
 > options("StartupBanner"=NULL);getOption("StartupBanner")
 NULL
 > buildStartupMessage(pkg="stats", msg)
-:stats>  The R Stats Package (version 3.0.1)
+:stats>  The R Stats Package (version 4.5.0)
 :stats> 
 :stats>  Note that you may set global options by options() --- cf.
 :stats>  ?"options".
 
 > 
 > 
-> MNH <- "http://www.r-project.org/"
+> MNH <- "https://www.r-project.org/"
 > buildStartupMessage(pkg="stats", msg, packageHelp=TRUE, MANUAL=MNH)
-:stats>  The R Stats Package (version 3.0.1)
+:stats>  The R Stats Package (version 4.5.0)
 :stats> 
 :stats>  Note that you may set global options by options() --- cf.
 :stats>  ?"options".
 :stats> 
-:stats>  For more information see ?"stats", as well as
-:stats>    http://www.r-project.org/
+:stats>  For more information see ?"stats"
 
 > ## not quite a manual, but to illustrate the principle:
 > ## "demo/nlm.R" as a "manual": to be system-independent the 
 > ## first call is to be preferred 
 > buildStartupMessage(pkg="stats", msg, packageHelp=TRUE, MANUAL=c("demo","nlm.R"))
-:stats>  The R Stats Package (version 3.0.1)
+:stats>  The R Stats Package (version 4.5.0)
 :stats> 
 :stats>  Note that you may set global options by options() --- cf.
 :stats>  ?"options".
 :stats> 
-:stats>  For more information see ?"stats"
+:stats>  For more information see ?"stats", as well as
+:stats>    C:/PF/R/R-devel5/library/stats/demo/nlm.R
 
 > ###  works, too, (i.e. is equivalent) under Linux and Windows (at least):
 > buildStartupMessage(pkg="stats", msg, packageHelp=TRUE, MANUAL="demo/nlm.R")
-:stats>  The R Stats Package (version 3.0.1)
+:stats>  The R Stats Package (version 4.5.0)
 :stats> 
 :stats>  Note that you may set global options by options() --- cf.
 :stats>  ?"options".
 :stats> 
-:stats>  For more information see ?"stats"
+:stats>  For more information see ?"stats", as well as
+:stats>    C:/PF/R/R-devel5/library/stats/demo/nlm.R
 
 > 
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("myStartupUtilities", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > ### * <FOOTER>
 > ###
+> cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.27 0.06 0.34 NA NA 
+Time elapsed:  0.15 0.07 0.23 NA NA 
 > grDevices::dev.off()
 null device 
           1 
