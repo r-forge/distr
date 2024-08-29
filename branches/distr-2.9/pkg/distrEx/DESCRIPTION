@@ -1,6 +1,6 @@
 Package: distrEx
-Version: 2.9.4
-Date: 2023-11-27
+Version: 2.9.6
+Date: 2024-08-29
 Title: Extensions of Package 'distr'
 Description: Extends package 'distr' by functionals, distances, and conditional distributions.
 Depends: R(>= 3.4), methods, distr(>= 2.8.0)

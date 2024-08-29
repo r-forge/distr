@@ -24,7 +24,7 @@ Type 'q()' to quit R.
 > library('distrEx')
 Loading required package: distr
 Loading required package: startupmsg
-:startupmsg>  Utilities for Start-Up Messages (version 0.9.6.1)
+:startupmsg>  Utilities for Start-Up Messages (version 0.9.7)
 :startupmsg> 
 :startupmsg>  For more information see ?"startupmsg",
 :startupmsg>  NEWS("startupmsg")
@@ -56,7 +56,7 @@ The following objects are masked from 'package:stats':
 
     df, qqplot, sd
 
-:distrEx>  Extensions of Package 'distr' (version 2.9.3)
+:distrEx>  Extensions of Package 'distr' (version 2.9.5)
 :distrEx> 
 :distrEx>  Note: Packages "e1071", "moments", "fBasics" should be
 :distrEx>  attached /before/ package "distrEx". See
@@ -835,7 +835,7 @@ function (n, cond, ...)
     }
     0 + cond %*% 1 + 1 * r(n, ...)
 }
-<environment: 0x00000262e422b858>
+<environment: 0x000002d8ff034198>
 > d(D1)
 function (x, cond, log = FALSE, ...) 
 {
@@ -857,7 +857,7 @@ function (x, cond, log = FALSE, ...)
     else d0 <- d0/1
     return(d0)
 }
-<environment: 0x00000262e422b858>
+<environment: 0x000002d8ff034198>
 > p(D1)
 function (q, cond, lower.tail = TRUE, log.p = FALSE, ...) 
 {
@@ -884,7 +884,7 @@ function (q, cond, lower.tail = TRUE, log.p = FALSE, ...)
             p0 <- log(p0)
     return(p0)
 }
-<environment: 0x00000262e422b858>
+<environment: 0x000002d8ff034198>
 > q(D1)
 function (p, cond, lower.tail = TRUE, log.p = FALSE, ...) 
 {
@@ -908,7 +908,7 @@ function (p, cond, lower.tail = TRUE, log.p = FALSE, ...)
         argList <- c(argList, dots)
     1 * do.call(q, argList) + 0 + as.vector(cond %*% 1)
 }
-<environment: 0x00000262e422b858>
+<environment: 0x000002d8ff034198>
 > ## in RStudio or Jupyter IRKernel, use q.l(.)(.) instead of q(.)(.)
 > param(D1)
 name:	parameter of a linear regression model
@@ -1354,6 +1354,7 @@ Error in integrate(fkt, lower = -1, upper = 5) :
 > 
 > ### ** Examples
 > 
+> ## IGNORE_RDIFF_BEGIN
 > distrExMASK()
 ######################################################################
 #  On masking of and by other functions in package "distrEx"       
@@ -1396,6 +1397,7 @@ To re-mask, you may use
   kurtosis <- distrEx::kurtosis
   skewness <- distrEx::skewness
  
+> ## IGNORE_RDIFF_END
 > 
 > 
 > 
@@ -1412,6 +1414,7 @@ To re-mask, you may use
 > 
 > ### ** Examples
 > 
+> ## IGNORE_RDIFF_BEGIN
 > distrExMOVED()
 #############################################################################
 #  On moving of functionality from package "distrEx" to package "RobExtremes"
@@ -1427,6 +1430,7 @@ the GEV, GPareto, Gumbel, Pareto classes and functional kMAD.
 
 To keep using this functionality install and load/attach package
 "RobExtremes".
+> ## IGNORE_RDIFF_END
 > 
 > 
 > 
@@ -1635,7 +1639,7 @@ see 'distrARITH()'; for switching off this warning see '?distroptions'
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  8.72 0.42 9.28 NA NA 
+Time elapsed:  7.16 0.44 8.17 NA NA 
 > grDevices::dev.off()
 null device 
           1 
