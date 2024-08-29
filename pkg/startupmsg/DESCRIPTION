@@ -1,15 +1,15 @@
 Package: startupmsg
 Encoding: UTF-8
-Version: 0.9.6.1
-Date: 2019-03-12
+Version: 0.9.7
+Date: 2024-08-29
 Title: Utilities for Start-Up Messages
 Description: Provides utilities to create or suppress start-up messages.
 Authors@R: person("Peter", "Ruckdeschel", role=c("cre", "cph", "aut"),
-        email="peter.ruckdeschel@uni-oldenburg.de", 
-		comment = c(ORCID = "0000-0001-7815-4809"))
+            email="peter.ruckdeschel@uni-oldenburg.de", comment = c(ORCID =
+            "0000-0001-7815-4809"))
 Depends: R(>= 1.8.0)
 ByteCompile: yes
 License: LGPL-3
 LastChangedDate: {$LastChangedDate$}
 LastChangedRevision: {$LastChangedRevision$}
-VCS/SVNRevision: 1319
+VCS/SVNRevision: 1448
