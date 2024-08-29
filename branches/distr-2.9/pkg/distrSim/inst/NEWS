@@ -18,6 +18,16 @@ under the hood:
 		as.personList(....) 
 
 ##############
+v 2.8.3
+##############
+
+under the hood:
+with the help of K. Hornik identified spurious, platform dependent LF/CR issue
+and capsulated calls to infoShow() in Rd files by 
+## IGNORE_RDIFF_BEGIN
+## IGNORE_RDIFF_END
+
+##############
 v 2.8
 ##############
 
