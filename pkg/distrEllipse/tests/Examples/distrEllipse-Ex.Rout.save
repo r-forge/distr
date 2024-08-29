@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2022-09-25 r82916 ucrt) -- "Unsuffered Consequences"
-Copyright (C) 2022 The R Foundation for Statistical Computing
-Platform: x86_64-w64-mingw32/x64 (64-bit)
+R Under development (unstable) (2024-08-17 r87027 ucrt) -- "Unsuffered Consequences"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -26,14 +26,14 @@ Loading required package: mvtnorm
 Loading required package: setRNG
 Loading required package: distr
 Loading required package: startupmsg
-:startupmsg>  Utilities for Start-Up Messages (version 0.9.6)
+:startupmsg>  Utilities for Start-Up Messages (version 0.9.7)
 :startupmsg> 
 :startupmsg>  For more information see ?"startupmsg",
 :startupmsg>  NEWS("startupmsg")
 
 Loading required package: sfsmisc
 :distr>  Object Oriented Implementation of Distributions (version
-:distr>  2.9.0)
+:distr>  2.9.4)
 :distr> 
 :distr>  Attention: Arithmetics on distribution objects are
 :distr>  understood as operations on corresponding random variables
@@ -59,7 +59,7 @@ The following objects are masked from 'package:stats':
     df, qqplot, sd
 
 Loading required package: distrEx
-:distrEx>  Extensions of Package 'distr' (version 2.9.0)
+:distrEx>  Extensions of Package 'distr' (version 2.9.2)
 :distrEx> 
 :distrEx>  Note: Packages "e1071", "moments", "fBasics" should be
 :distrEx>  attached /before/ package "distrEx". See
@@ -84,7 +84,7 @@ The following objects are masked from 'package:stats':
 
 Loading required package: distrSim
 :distrSim>  Simulation Classes Based on Package 'distr' (version
-:distrSim>  2.8.0)
+:distrSim>  2.8.2)
 :distrSim> 
 :distrSim>  Some functions from package 'stats' are intentionally
 :distrSim>  masked ---see distrSimMASK().
@@ -826,6 +826,7 @@ Distribution Object of Class: SphericalDistribution
 > 
 > ### ** Examples
 > 
+> ## IGNORE_RDIFF_BEGIN
 > distrEllipseMASK()
 ######################################################################
 #  On masking of and by other functions in package "distrEllipse"       
@@ -835,6 +836,7 @@ Attention:
 
 *** intentional masking: ***
 
+> ## IGNORE_RDIFF_END
 > 
 > 
 > 
@@ -903,7 +905,7 @@ $withED
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  7.36 0.31 7.7 NA NA 
+Time elapsed:  7.63 0.33 8.46 NA NA 
 > grDevices::dev.off()
 null device 
           1 
