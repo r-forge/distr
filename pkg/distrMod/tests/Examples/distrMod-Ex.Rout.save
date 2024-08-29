@@ -31,7 +31,7 @@ Loading required package: startupmsg
 
 Loading required package: sfsmisc
 :distr>  Object Oriented Implementation of Distributions (version
-:distr>  2.9.4)
+:distr>  2.9.5)
 :distr> 
 :distr>  Attention: Arithmetics on distribution objects are
 :distr>  understood as operations on corresponding random variables
@@ -57,7 +57,7 @@ The following objects are masked from 'package:stats':
     df, qqplot, sd
 
 Loading required package: distrEx
-:distrEx>  Extensions of Package 'distr' (version 2.9.2)
+:distrEx>  Extensions of Package 'distr' (version 2.9.3)
 :distrEx> 
 :distrEx>  Note: Packages "e1071", "moments", "fBasics" should be
 :distrEx>  attached /before/ package "distrEx". See
@@ -92,7 +92,7 @@ Loading required package: RandVar
 Loading required package: MASS
 Loading required package: stats4
 :distrMod>  Object Oriented Implementation of Probability Models
-:distrMod>  (version 2.9.2)
+:distrMod>  (version 2.9.3)
 :distrMod> 
 :distrMod>  Some functions from pkg's 'base' and 'stats' are
 :distrMod>  intentionally masked ---see distrModMASK().
