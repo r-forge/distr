@@ -1,5 +1,5 @@
 Package: distr
-Version: 2.9.5
+Version: 2.9.6
 Date: 2024-01-28
 Title: Object Oriented Implementation of Distributions
 Description: S4-classes and methods for distributions as described in 
