@@ -467,21 +467,38 @@ updateHTMLpages(pkgNames ="distrEllipse", pkgVersions = "2.8.3")
 
 Pkgs <- c("distrSim")
 Names <- c("Version")    ## 20240829
-Values <- matrix(c("2.8.3"),1,length(Pkgs))
+Values <- matrix(c("2.8.4"),1,length(Pkgs))
 colnames(Values) <- Pkgs
 rownames(Values)  <- Names
 changeDescription(startDir = "C:/rtest/distr",names=Names,
                   pkgs=Pkgs, values=Values)
-updateHTMLpages(pkgNames ="distrSim", pkgVersions = "2.8.3")
+updateHTMLpages(pkgNames ="distrSim", pkgVersions = "2.8.4")
+
+Pkgs <- c("distrSim")
+Names <- c("Version")    ## 20240829
+Values <- matrix(c("2.8.5"),1,length(Pkgs))
+colnames(Values) <- Pkgs
+rownames(Values)  <- Names
+changeDescription(startDir = "C:/rtest/distr/branches/distr-2.9",names=Names,
+                  pkgs=Pkgs, values=Values)
+updateHTMLpages(pkgNames ="distrSim", pkgVersions = "2.8.5")
 
 Pkgs <- c("distrMod")
 Names <- c("Version")    ## 20240829
-Values <- matrix(c("2.9.2"),1,length(Pkgs))
+Values <- matrix(c("2.9.3"),1,length(Pkgs))
 colnames(Values) <- Pkgs
 rownames(Values)  <- Names
 changeDescription(startDir = "C:/rtest/distr",names=Names,
                   pkgs=Pkgs, values=Values)
-updateHTMLpages(pkgNames ="distrMod", pkgVersions = "2.9.2")
+updateHTMLpages(pkgNames ="distrMod", pkgVersions = "2.9.3")
+
+Pkgs <- c("distrMod")
+Names <- c("Version")    ## 20240829
+Values <- matrix(c("2.9.4"),1,length(Pkgs))
+colnames(Values) <- Pkgs
+rownames(Values)  <- Names
+changeDescription(startDir = "C:/rtest/distr/branches/distr-2.9",names=Names,
+                  pkgs=Pkgs, values=Values)
 
 Pkgs <- c("RobAStBase")
 Names <- c("Version")    ## 20240829
