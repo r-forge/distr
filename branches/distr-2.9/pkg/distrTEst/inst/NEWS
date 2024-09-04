@@ -18,6 +18,13 @@ under the hood:
 		as.personList(....) 
 
 ##############
+v 2.8.4
+##############
+
++ taken up pkg "distr" into "Enhances" in DESCRIPTION to ensure all 
+  inter-pkg xrefs in Rd-files work
+
+##############
 v 2.8
 ##############
 
