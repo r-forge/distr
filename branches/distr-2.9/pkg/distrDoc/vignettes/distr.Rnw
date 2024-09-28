@@ -49,6 +49,7 @@
 %
 %
 \usepackage{geometry}
+\usepackage[T1]{fontenc}
 \usepackage{ifpdf}
 \usepackage{color}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.75}
@@ -138,7 +139,7 @@ opts_chunk$set(tidy=FALSE)
 \def\Code#1{{\tt\color{Rcolor} #1}}
 \def\file#1{{\tt #1}}
 \def\pkg#1{{\tt"#1"}}
-\newcommand{\pkgversion}{{\tt 2.7}}
+\newcommand{\pkgversion}{{\tt 2.9}}
 % -------------------------------------------------------------------------------
 \title{{\tt S4} Classes for Distributions---a manual for packages \pkg{distr},
         \pkg{distrEx}, \pkg{distrEllipse}, \pkg{distrMod}, \pkg{distrSim},
@@ -3646,7 +3647,7 @@ standard {R} code.
 \newblock In: Hornik K., Leisch F. and Zeileis A. (Eds.) {\em
   Proceedings of the 3rd International Workshop on Distributed Statistical
   Computing (DSC 2003)\/}. Vienna, Austria.
-%\newblock Published as https://www.ci.tuwien.ac.at/Conferences/DSC-2003/
+\newblock Published as http://www.ci.tuwien.ac.at/Conferences/DSC-2003/
 
 \bibitem{Cham:98}
 Chambers J.M.  (1998):
@@ -3658,13 +3659,13 @@ Chambers J.M.  (1998):
 Gentleman R. (2003):
 \newblock {\em Object Orientated Programming. Slides of a Short Course held in 
 Auckland\/}.
-\newblock https://www.stat.auckland.ac.nz/S-Workshop/Gentleman/Methods.pdf
+\newblock http://www.stat.auckland.ac.nz/S-Workshop/Gentleman/Methods.pdf
 
 \bibitem{MK:05}
 Kohl M.  (2005):
 \newblock {\em Numerical Contributions to the Asymptotic Theory of Robustness\/}. 
-\newblock {Dissertation}, Universit\"at Bayreuth. 
-\newblock See also https://www.stamats.de/wp-content/uploads/2018/04/ThesisMKohl.pdf
+\newblock {Dissertation}, Universit{\"a}t Bayreuth. 
+\newblock See also http://stamats.de/ThesisMKohl.pdf
 
 \bibitem{K:R:S:04}
 Ruckdeschel P. and Kohl, M. (2014):
