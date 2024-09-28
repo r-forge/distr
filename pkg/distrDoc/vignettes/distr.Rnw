@@ -49,6 +49,7 @@
 %
 %
 \usepackage{geometry}
+\usepackage[T1]{fontenc}
 \usepackage{ifpdf}
 \usepackage{color}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.75}
@@ -138,7 +139,7 @@ opts_chunk$set(tidy=FALSE)
 \def\Code#1{{\tt\color{Rcolor} #1}}
 \def\file#1{{\tt #1}}
 \def\pkg#1{{\tt"#1"}}
-\newcommand{\pkgversion}{{\tt 2.7}}
+\newcommand{\pkgversion}{{\tt 2.9}}
 % -------------------------------------------------------------------------------
 \title{{\tt S4} Classes for Distributions---a manual for packages \pkg{distr},
         \pkg{distrEx}, \pkg{distrEllipse}, \pkg{distrMod}, \pkg{distrSim},
@@ -3663,7 +3664,7 @@ Auckland\/}.
 \bibitem{MK:05}
 Kohl M.  (2005):
 \newblock {\em Numerical Contributions to the Asymptotic Theory of Robustness\/}. 
-\newblock {Dissertation}, Universit\"at Bayreuth. 
+\newblock {Dissertation}, Universit{\"a}t Bayreuth. 
 \newblock See also http://stamats.de/ThesisMKohl.pdf
 
 \bibitem{K:R:S:04}
