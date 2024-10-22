@@ -53,7 +53,7 @@ setMethod("plot", signature(x = "AbscontDistribution", y = "missing"),
                       col.sub = col.sub, cex.points = cex.points,
                       pch.u = pch.u, pch.a = pch.a, mfColRow = mfColRow,
                       to.draw.arg = to.draw.arg, withSubst = withSubst),
-                      to.draw=to.draw, panelFirst = pF,
+                      to.draw = to.draw, panelFirst = pF,
                       panelLast = pL)
 
      plotInfo$to.draw <- to.draw
@@ -65,9 +65,10 @@ setMethod("plot", signature(x = "AbscontDistribution", y = "missing"),
 
      dots.for.points <- .makedotsPt(dots)
 
-     dots.lowlevel <- .makedotsLowLevel(dots)
-     dots.without.pch <- dots.lowlevel[! (names(dots.lowlevel) %in% c("col", "pch"))]
-     if(!is(x,"AbscontDistribution"))
+     dots.without.pch <- dots.lowlevel <- .makedotsLowLevel(dots)
+	 dots.without.pch$col <- dots.without.pch$pch <- NULL
+	 
+	 if(!is(x,"AbscontDistribution"))
          x <- .ULC.cast(x)     
      ###
      if(!is.logical(inner))
@@ -277,7 +278,7 @@ setMethod("plot", signature(x = "AbscontDistribution", y = "missing"),
          plotInfo$dplot$plot <- c(list(x = grid, dxg, type = "l",
              ylim = ylim1,  ylab = ylab0[["d"]], xlab = xlab0[["d"]], log = logpd),
              dots.lowlevel)
-         do.call(plot, c(list(x = grid, dxg, type = "l",
+         (plot, c(list(x = grid, dxg, type = "l",
              ylim = ylim1,  ylab = ylab0[["d"]], xlab = xlab0[["d"]], log = logpd),
              dots.lowlevel))
          plotInfo$dplot$usr <- par("usr")

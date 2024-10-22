@@ -7,6 +7,11 @@
  distrXXX family as a whole in order to ease updating "depends" 
  information)
 
+##############
+v 2.8.4
+##############
+under the hood:
++ fixed some (LaTeX-)encoding issue
 
 ##############
 v 2.8
