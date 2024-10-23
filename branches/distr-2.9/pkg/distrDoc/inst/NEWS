@@ -1,4 +1,4 @@
-######################################################################
+	######################################################################
 #  News: to package distrDoc 
 ######################################################################
 
@@ -18,6 +18,12 @@ under the hood:
 + transformed CITATION file to new format, i.e., bibentry() instead of citEntry(),
         c(as.person( .... ), as.person( .... ), ...), instead of 
 		as.personList(....) 
+
+##############
+v 2.8.4
+##############
+under the hood:
++ fixed some (LaTeX-)encoding issue
 
 ##############
 v 2.8
