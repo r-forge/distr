@@ -431,6 +431,24 @@ updateHTMLpages(pkgNames ="distrMod", pkgVersions = "2.8.4")
 
 if(FALSE){
 Pkgs <- c("distrMod")
+Names <- c("Version")    ## 20241023
+Values <- matrix(c("2.9.6"),1,length(Pkgs))
+colnames(Values) <- Pkgs
+rownames(Values)  <- Names
+changeDescription(startDir = "C:/rtest/distr",names=Names,
+                  pkgs=Pkgs, values=Values)
+updateHTMLpages(pkgNames ="distrMod", pkgVersions = "2.9.6")
+
+Pkgs <- c("distrDoc")
+Names <- c("Version")    ## 20241022
+Values <- matrix(c("2.8.4"),1,length(Pkgs))
+colnames(Values) <- Pkgs
+rownames(Values)  <- Names
+changeDescription(startDir = "C:/rtest/distr",names=Names,
+                  pkgs=Pkgs, values=Values)
+updateHTMLpages(pkgNames ="distrDoc", pkgVersions = "2.8.4")
+
+Pkgs <- c("distrMod")
 Names <- c("Version")    ## 20240902
 Values <- matrix(c("2.9.4"),1,length(Pkgs))
 colnames(Values) <- Pkgs

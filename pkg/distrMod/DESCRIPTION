@@ -1,6 +1,6 @@
 Package: distrMod
-Version: 2.9.4
-Date: 2024-09-03
+Version: 2.9.6
+Date: 2024-10-23
 Title: Object Oriented Implementation of Probability Models
 Description: Implements S4 classes for probability models based on packages 'distr' and
             'distrEx'.
@@ -17,4 +17,4 @@ License: LGPL-3
 URL: http://distr.r-forge.r-project.org/
 LastChangedDate: {$LastChangedDate$}
 LastChangedRevision: {$LastChangedRevision$}
-VCS/SVNRevision: 1470
+VCS/SVNRevision: 1478
