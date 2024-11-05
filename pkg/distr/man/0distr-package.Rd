@@ -52,7 +52,7 @@ Imports: \tab stats, grDevices, utils, MASS \cr
 LazyLoad: \tab yes \cr
 License: \tab LGPL-3 \cr
 URL: \tab https://distr.r-forge.r-project.org/\cr
-VCS/SVNRevision: \tab 1480 \cr
+VCS/SVNRevision: \tab 1481 \cr
 }}
 \section{Classes}{
 Distribution classes have a slot \code{param} the class of which
