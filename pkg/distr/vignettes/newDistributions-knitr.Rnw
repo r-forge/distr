@@ -40,6 +40,7 @@
 \svnRegisterAuthor{kowzar}{Kouros Owzar}
 %
 \usepackage{geometry}
+\usepackage[T1]{fontenc}
 %
 \usepackage{color}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.75}

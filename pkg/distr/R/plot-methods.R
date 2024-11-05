@@ -278,7 +278,7 @@ setMethod("plot", signature(x = "AbscontDistribution", y = "missing"),
          plotInfo$dplot$plot <- c(list(x = grid, dxg, type = "l",
              ylim = ylim1,  ylab = ylab0[["d"]], xlab = xlab0[["d"]], log = logpd),
              dots.lowlevel)
-         (plot, c(list(x = grid, dxg, type = "l",
+         do.call(plot, c(list(x = grid, dxg, type = "l",
              ylim = ylim1,  ylab = ylab0[["d"]], xlab = xlab0[["d"]], log = logpd),
              dots.lowlevel))
          plotInfo$dplot$usr <- par("usr")

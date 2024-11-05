@@ -40,6 +40,7 @@
 \svnRegisterAuthor{kowzar}{Kouros Owzar}
 %
 \usepackage{geometry}
+\usepackage[T1]{fontenc}
 %
 \usepackage{color}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.75}
@@ -719,7 +720,7 @@ The procedure will be similar for \textit{any} new class of distributions.\medsk
 \section{Help needed  / collaboration welcome}
 % -------------------------------------------------------------------------------
 You are --- as announced on  
-\href{https://distr.r-forge.r-project.org}{\tt https://distr.r-forge.r-project.org} ---
+\href{https://distr.r-forge.r-project.org}{\tt http://distr.r-forge.r-project.org} ---
          very welcome to collaborate in this project!
 See in particular
 \href{https://distr.r-forge.r-project.org/HOWTO-collaborate.txt}%

@@ -430,6 +430,15 @@ updateHTMLpages(pkgNames ="distrMod", pkgVersions = "2.8.4")
 }
 
 if(FALSE){
+Pkgs <- c("distr")
+Names <- c("Version")    ## 20241105
+Values <- matrix(c("2.9.6"),1,length(Pkgs))
+colnames(Values) <- Pkgs
+rownames(Values)  <- Names
+changeDescription(startDir = "C:/rtest/distr",names=Names,
+                  pkgs=Pkgs, values=Values)
+updateHTMLpages(pkgNames ="distr", pkgVersions = "2.9.6")
+
 Pkgs <- c("distrMod")
 Names <- c("Version")    ## 20241023
 Values <- matrix(c("2.9.6"),1,length(Pkgs))

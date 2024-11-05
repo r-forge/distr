@@ -8,6 +8,12 @@
  information)
  
 ##############
+v 2.9.6
+##############
+under the hood:
++ fixed some (LaTeX-)encoding issue
+
+##############
 v 2.9.5
 ##############
 under the hood:
