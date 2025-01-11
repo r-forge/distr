@@ -30,7 +30,7 @@ Package: \tab distrEx \cr
 Version: \tab 2.9.6 \cr
 Date: \tab 2024-08-29 \cr
 Depends: \tab R(>= 3.4), methods, distr(>= 2.8.0) \cr
-Imports: \tab startupmsg, utils, stats \cr
+Imports: \tab startupmsg(>= 1.0.0), utils, stats \cr
 Suggests:  \tab tcltk \cr
 LazyLoad: \tab yes \cr
 License: \tab LGPL-3 \cr

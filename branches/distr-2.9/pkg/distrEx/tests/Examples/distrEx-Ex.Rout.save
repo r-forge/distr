@@ -1,6 +1,6 @@
 
-R Under development (unstable) (2024-08-17 r87027 ucrt) -- "Unsuffered Consequences"
-Copyright (C) 2024 The R Foundation for Statistical Computing
+R Under development (unstable) (2025-01-10 r87562 ucrt) -- "Unsuffered Consequences"
+Copyright (C) 2025 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -24,31 +24,28 @@ Type 'q()' to quit R.
 > library('distrEx')
 Loading required package: distr
 Loading required package: startupmsg
-:startupmsg>  Utilities for Start-Up Messages (version 0.9.7)
+:startupmsg>  *** Utilities for Start-Up Messages ***
 :startupmsg> 
-:startupmsg>  For more information see ?"startupmsg",
-:startupmsg>  NEWS("startupmsg")
-
+:startupmsg>  Version information in start-up messages is
+:startupmsg>  currently suppressed. To see such information on
+:startupmsg>  startup as in versions of this pkg prior to this
+:startupmsg>  versionr, set option "StartupBanner" to a value
+:startupmsg>  different to {"off", "no-version", "no -
+:startupmsg>  version"}, e.g., by options("StartupBanner" =
+:startupmsg>  "complete") or by options("StartupBanner" = NULL)
+:startupmsg>  or by options("StartupBanner" = "something else").
+:startupmsg> 
+:startupmsg>  Detailed information about which packages are
+:startupmsg>  currently loaded or attached at which version
+:startupmsg>  (regardless of whether these have start-up
+:startupmsg>  messages managed by this package) can be obtained
+:startupmsg>  by "sessionInfo()".
+:startupmsg> 
+:startupmsg> 
 Loading required package: sfsmisc
-:distr>  Object Oriented Implementation of Distributions (version
-:distr>  2.9.4)
+:distr>  *** Object Oriented Implementation of Distributions ***
 :distr> 
-:distr>  Attention: Arithmetics on distribution objects are
-:distr>  understood as operations on corresponding random variables
-:distr>  (r.v.s); see distrARITH().
 :distr> 
-:distr>  Some functions from package 'stats' are intentionally masked
-:distr>  ---see distrMASK().
-:distr> 
-:distr>  Note that global options are controlled by distroptions()
-:distr>  ---c.f. ?"distroptions".
-:distr> 
-:distr>  For more information see ?"distr", NEWS("distr"), as well as
-:distr>    http://distr.r-forge.r-project.org/
-:distr>  Package "distrDoc" provides a vignette to this package as
-:distr>  well as to several extension packages; try
-:distr>  vignette("distr").
-
 
 Attaching package: 'distr'
 
@@ -56,22 +53,9 @@ The following objects are masked from 'package:stats':
 
     df, qqplot, sd
 
-:distrEx>  Extensions of Package 'distr' (version 2.9.5)
+:distrEx>  *** Extensions of Package 'distr' ***
 :distrEx> 
-:distrEx>  Note: Packages "e1071", "moments", "fBasics" should be
-:distrEx>  attached /before/ package "distrEx". See
-:distrEx>  distrExMASK().Note: Extreme value distribution
-:distrEx>  functionality has been moved to
 :distrEx> 
-:distrEx>        package "RobExtremes". See distrExMOVED().
-:distrEx> 
-:distrEx>  For more information see ?"distrEx", NEWS("distrEx"), as
-:distrEx>  well as
-:distrEx>    http://distr.r-forge.r-project.org/
-:distrEx>  Package "distrDoc" provides a vignette to this package
-:distrEx>  as well as to several related packages; try
-:distrEx>  vignette("distr").
-
 
 Attaching package: 'distrEx'
 
@@ -835,7 +819,7 @@ function (n, cond, ...)
     }
     0 + cond %*% 1 + 1 * r(n, ...)
 }
-<environment: 0x000002d8ff034198>
+<environment: 0x000001dd983bed28>
 > d(D1)
 function (x, cond, log = FALSE, ...) 
 {
@@ -857,7 +841,7 @@ function (x, cond, log = FALSE, ...)
     else d0 <- d0/1
     return(d0)
 }
-<environment: 0x000002d8ff034198>
+<environment: 0x000001dd983bed28>
 > p(D1)
 function (q, cond, lower.tail = TRUE, log.p = FALSE, ...) 
 {
@@ -884,7 +868,7 @@ function (q, cond, lower.tail = TRUE, log.p = FALSE, ...)
             p0 <- log(p0)
     return(p0)
 }
-<environment: 0x000002d8ff034198>
+<environment: 0x000001dd983bed28>
 > q(D1)
 function (p, cond, lower.tail = TRUE, log.p = FALSE, ...) 
 {
@@ -908,7 +892,7 @@ function (p, cond, lower.tail = TRUE, log.p = FALSE, ...)
         argList <- c(argList, dots)
     1 * do.call(q, argList) + 0 + as.vector(cond %*% 1)
 }
-<environment: 0x000002d8ff034198>
+<environment: 0x000001dd983bed28>
 > ## in RStudio or Jupyter IRKernel, use q.l(.)(.) instead of q(.)(.)
 > param(D1)
 name:	parameter of a linear regression model
@@ -1639,7 +1623,7 @@ see 'distrARITH()'; for switching off this warning see '?distroptions'
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  7.16 0.44 8.17 NA NA 
+Time elapsed:  5.2 0.14 5.37 NA NA 
 > grDevices::dev.off()
 null device 
           1 
