@@ -1,7 +1,7 @@
 
-R version 3.5.1 RC (2018-06-24 r74935) -- "Feather Spray"
-Copyright (C) 2018 The R Foundation for Statistical Computing
-Platform: i386-w64-mingw32/i386 (32-bit)
+R Under development (unstable) (2025-01-10 r87562 ucrt) -- "Unsuffered Consequences"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -21,48 +21,33 @@ Type 'q()' to quit R.
 > source(file.path(R.home("share"), "R", "examples-header.R"))
 > options(warn = 1)
 > options(pager = "console")
-> base::assign(".ExTimings", "distrTEst-Ex.timings", pos = 'CheckExEnv')
-> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
-> base::assign(".format_ptime",
-+ function(x) {
-+   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
-+   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
-+   options(OutDec = '.')
-+   format(x[1L:3L], digits = 7L)
-+ },
-+ pos = 'CheckExEnv')
-> 
-> ### * </HEADER>
 > library('distrTEst')
 Loading required package: setRNG
 Loading required package: distrSim
 Loading required package: distr
 Loading required package: startupmsg
-:startupmsg>  Utilities for Start-Up Messages (version 0.9.5)
+:startupmsg>  *** Utilities for Start-Up Messages ***
 :startupmsg> 
-:startupmsg>  For more information see ?"startupmsg",
-:startupmsg>  NEWS("startupmsg")
-
+:startupmsg>  Version information in start-up messages is
+:startupmsg>  currently suppressed. To see such information on
+:startupmsg>  startup as in versions of this pkg prior to this
+:startupmsg>  versionr, set option "StartupBanner" to a value
+:startupmsg>  different to {"off", "no-version", "no -
+:startupmsg>  version"}, e.g., by options("StartupBanner" =
+:startupmsg>  "complete") or by options("StartupBanner" = NULL)
+:startupmsg>  or by options("StartupBanner" = "something else").
+:startupmsg> 
+:startupmsg>  Detailed information about which packages are
+:startupmsg>  currently loaded or attached at which version
+:startupmsg>  (regardless of whether these have start-up
+:startupmsg>  messages managed by this package) can be obtained
+:startupmsg>  by "sessionInfo()".
+:startupmsg> 
+:startupmsg> 
 Loading required package: sfsmisc
-:distr>  Object Oriented Implementation of Distributions (version
-:distr>  2.8.0)
+:distr>  *** Object Oriented Implementation of Distributions ***
 :distr> 
-:distr>  Attention: Arithmetics on distribution objects are
-:distr>  understood as operations on corresponding random variables
-:distr>  (r.v.s); see distrARITH().
 :distr> 
-:distr>  Some functions from package 'stats' are intentionally masked
-:distr>  ---see distrMASK().
-:distr> 
-:distr>  Note that global options are controlled by distroptions()
-:distr>  ---c.f. ?"distroptions".
-:distr> 
-:distr>  For more information see ?"distr", NEWS("distr"), as well as
-:distr>    http://distr.r-forge.r-project.org/
-:distr>  Package "distrDoc" provides a vignette to this package as
-:distr>  well as to several extension packages; try
-:distr>  vignette("distr").
-
 
 Attaching package: 'distr'
 
@@ -70,20 +55,9 @@ The following objects are masked from 'package:stats':
 
     df, qqplot, sd
 
-:distrSim>  Simulation Classes Based on Package 'distr' (version
-:distrSim>  2.7.0)
-:distrSim> 
-:distrSim>  Some functions from package 'stats' are intentionally
-:distrSim>  masked ---see distrSimMASK().
+:distrSim>  *** Simulation Classes Based on Package 'distr' ***
 :distrSim> 
 :distrSim> 
-:distrSim>  For more information see ?"distrSim",
-:distrSim>  NEWS("distrSim"), as well as
-:distrSim>    http://distr.r-forge.r-project.org/
-:distrSim>  Package "distrDoc" provides a vignette to this package
-:distrSim>  as well as to several related packages; try
-:distrSim>  vignette("distr").
-
 
 Attaching package: 'distrSim'
 
@@ -95,16 +69,10 @@ The following object is masked from 'package:base':
 
     rbind
 
-:distrTEst>  Estimation and Testing Classes Based on Package
-:distrTEst>  'distr' (version 2.7.0)
+:distrTEst>  *** Estimation and Testing Classes Based on Package
+:distrTEst>  'distr' ***
 :distrTEst> 
-:distrTEst>  For more information see ?"distrTEst",
-:distrTEst>  NEWS("distrTEst"), as well as
-:distrTEst>    http://distr.r-forge.r-project.org/
-:distrTEst>  Package "distrDoc" provides a vignette to this
-:distrTEst>  package as well as to several related packages; try
-:distrTEst>  vignette("distr").
-
+:distrTEst> 
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 > base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
@@ -114,7 +82,6 @@ The following object is masked from 'package:base':
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: Evaluation-class
 > ### Title: Class "Evaluation"
 > ### Aliases: Evaluation-class initialize,Evaluation-method
@@ -236,6 +203,10 @@ Result: 'data.frame':	5 obs. of  2 variables:
  $ mean.re: num  -0.0508 -0.0379 0.4138 -0.1625 -0.0137
 > plot(ev1)
 > #
+> #clean up
+> unlink("csim.mean")
+> unlink("csim.mean.comment")
+> #
 > #another function to be evaluated:
 > severalThings<- function(x) {list("mean"=mean(x),"sd"=sd(as.vector(x)), "mad"=mad(x))}
 > ev3 <- evaluate(cs, severalThings, resname="several") 
@@ -244,15 +215,12 @@ Result: 'data.frame':	5 obs. of  2 variables:
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("Evaluation-class", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 > nameEx("EvaluationList-class")
 > ### * EvaluationList-class
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: EvaluationList-class
 > ### Title: Class "EvaluationList"
 > ### Aliases: Elist EvaluationList EvaluationList-class
@@ -431,18 +399,18 @@ Result:
  Mean   :-0.01646   Mean   :-0.01515  
  3rd Qu.: 0.01899   3rd Qu.: 0.02496  
  Max.   : 0.08584   Max.   : 0.07802  
+> #clean up
+> unlink("csim.mean")
+> unlink("csim.mean.comment")
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("EvaluationList-class", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 > nameEx("distrTEstoptions")
 > ### * distrTEstoptions
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: distrTEstoptions
 > ### Title: functions to change the global variables of the package
 > ###   'distrTEst'
@@ -477,14 +445,12 @@ $MaxNumberofPlottedEvaluationDims
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("distrTEstoptions", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > ### * <FOOTER>
 > ###
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  2.64 0.22 2.92 NA NA 
+Time elapsed:  9.08 0.25 9.36 NA NA 
 > grDevices::dev.off()
 null device 
           1 
