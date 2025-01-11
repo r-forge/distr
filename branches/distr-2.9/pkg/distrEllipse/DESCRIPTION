@@ -7,7 +7,7 @@ Description: Distribution (S4-)classes for elliptically contoured distributions 
 Depends: R(>= 3.4), methods, graphics, mvtnorm, setRNG(>= 2006.2-1), distr(>= 2.8.0),
             distrEx(>= 2.8.0), distrSim(>= 2.2)
 Suggests: distrMod(>= 2.8.0), distrTEst(>= 2.2)
-Imports: startupmsg, stats
+Imports: startupmsg(>= 1.0.0), stats
 Authors@R: person("Peter", "Ruckdeschel", role=c("cre", "cph", "aut"),
             email="peter.ruckdeschel@uni-oldenburg.de", 
 			comment = c(ORCID = "0000-0001-7815-4809"))
