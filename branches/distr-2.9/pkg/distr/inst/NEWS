@@ -8,6 +8,12 @@
  information)
  
 ##############
+v 2.9.7 
+##############
+under the hood:
++ adapted reference output for new startupmsg
+
+##############
 v 2.9.6
 ##############
 under the hood:
