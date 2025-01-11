@@ -8,6 +8,16 @@
  information)
  
 ##############
+v 2.9.2
+##############
+
+under the hood:
++ adapted reference output for new startupmsg
++ transformed CITATION file to new format, i.e., bibentry() instead of citEntry(),
+        c(as.person( .... ), as.person( .... ), ...), instead of 
+		as.personList(....) 
+
+##############
 v 2.9.0
 ##############
 
@@ -17,6 +27,9 @@ user-visible CHANGES:
   "UnivariateDistribution" (i.e., covering, e.g., mixtures 
   of discrete and abs. cont distributions) -> then only
   the cdfs for different numbers of summands are plotted
+
+under the hood:
++ converted encoding to UTF-8
 
 
 ##############
