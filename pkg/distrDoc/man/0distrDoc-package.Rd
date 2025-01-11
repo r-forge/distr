@@ -13,16 +13,16 @@ packages \pkg{distr}, \pkg{distrEx}, \pkg{distrSim}, \pkg{distrTEst},
 \details{
 \tabular{ll}{
 Package: \tab distrDoc \cr
-Version: \tab 2.8.4 \cr
-Date: \tab 2024-10-22 \cr
+Version: \tab 2.8.5 \cr
+Date: \tab 2025-01-11 \cr
 Depends: \tab R(>= 3.4) \cr
 Imports: \tab distr(>= 2.2.0), distrEx(>= 2.2.0), distrSim(>= 2.2.0), distrTEst(>= 2.2.0),distrTeach(>= 2.2.0), RandVar(>= 0.7), distrMod(>= 2.2.0), MASS, methods,
-startupmsg \cr
+startupmsg(>= 1.0.0) \cr
 Suggests: \tab Biobase, knitr \cr
 ByteCompile: \tab yes \cr
 License: \tab LGPL-3 \cr
 URL: \tab https://distr.r-forge.r-project.org/\cr
-VCS/SVNRevision: \tab 1476 \cr
+VCS/SVNRevision: \tab 1499 \cr
 }}
 \section{Acknowledgement}{
 The idea to split off a common vignette for a set of packages 
