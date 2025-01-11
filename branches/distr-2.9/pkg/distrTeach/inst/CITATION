@@ -1,5 +1,5 @@
 bibentry(bibtype = "Article",
-         mheader = "To cite package distrEx (and other packages of the distr family of packages) in publications use:",
+         mheader = "To cite package distrTeach (and other packages of the distr family of packages) in publications use:",
 		 title = "S4 Classes for Distributions",
          author = c(person("Peter", "Ruckdeschel", comment = c(ORCID = "0000-0001-7815-4809")),
                     person("Matthias", "Kohl", comment = c(ORCID = "0000-0001-9514-8910")),

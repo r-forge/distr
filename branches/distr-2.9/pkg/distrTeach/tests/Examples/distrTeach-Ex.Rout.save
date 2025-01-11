@@ -1,7 +1,7 @@
 
-R version 3.5.1 RC (2018-06-24 r74935) -- "Feather Spray"
-Copyright (C) 2018 The R Foundation for Statistical Computing
-Platform: i386-w64-mingw32/i386 (32-bit)
+R Under development (unstable) (2025-01-10 r87562 ucrt) -- "Unsuffered Consequences"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -21,46 +21,31 @@ Type 'q()' to quit R.
 > source(file.path(R.home("share"), "R", "examples-header.R"))
 > options(warn = 1)
 > options(pager = "console")
-> base::assign(".ExTimings", "distrTeach-Ex.timings", pos = 'CheckExEnv')
-> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
-> base::assign(".format_ptime",
-+ function(x) {
-+   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
-+   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
-+   options(OutDec = '.')
-+   format(x[1L:3L], digits = 7L)
-+ },
-+ pos = 'CheckExEnv')
-> 
-> ### * </HEADER>
 > library('distrTeach')
 Loading required package: distr
 Loading required package: startupmsg
-:startupmsg>  Utilities for Start-Up Messages (version 0.9.5)
+:startupmsg>  *** Utilities for Start-Up Messages ***
 :startupmsg> 
-:startupmsg>  For more information see ?"startupmsg",
-:startupmsg>  NEWS("startupmsg")
-
+:startupmsg>  Version information in start-up messages is
+:startupmsg>  currently suppressed. To see such information on
+:startupmsg>  startup as in versions of this pkg prior to this
+:startupmsg>  versionr, set option "StartupBanner" to a value
+:startupmsg>  different to {"off", "no-version", "no -
+:startupmsg>  version"}, e.g., by options("StartupBanner" =
+:startupmsg>  "complete") or by options("StartupBanner" = NULL)
+:startupmsg>  or by options("StartupBanner" = "something else").
+:startupmsg> 
+:startupmsg>  Detailed information about which packages are
+:startupmsg>  currently loaded or attached at which version
+:startupmsg>  (regardless of whether these have start-up
+:startupmsg>  messages managed by this package) can be obtained
+:startupmsg>  by "sessionInfo()".
+:startupmsg> 
+:startupmsg> 
 Loading required package: sfsmisc
-:distr>  Object Oriented Implementation of Distributions (version
-:distr>  2.8.0)
+:distr>  *** Object Oriented Implementation of Distributions ***
 :distr> 
-:distr>  Attention: Arithmetics on distribution objects are
-:distr>  understood as operations on corresponding random variables
-:distr>  (r.v.s); see distrARITH().
 :distr> 
-:distr>  Some functions from package 'stats' are intentionally masked
-:distr>  ---see distrMASK().
-:distr> 
-:distr>  Note that global options are controlled by distroptions()
-:distr>  ---c.f. ?"distroptions".
-:distr> 
-:distr>  For more information see ?"distr", NEWS("distr"), as well as
-:distr>    http://distr.r-forge.r-project.org/
-:distr>  Package "distrDoc" provides a vignette to this package as
-:distr>  well as to several extension packages; try
-:distr>  vignette("distr").
-
 
 Attaching package: 'distr'
 
@@ -69,22 +54,9 @@ The following objects are masked from 'package:stats':
     df, qqplot, sd
 
 Loading required package: distrEx
-:distrEx>  Extensions of Package 'distr' (version 2.7.0)
+:distrEx>  *** Extensions of Package 'distr' ***
 :distrEx> 
-:distrEx>  Note: Packages "e1071", "moments", "fBasics" should be
-:distrEx>  attached /before/ package "distrEx". See
-:distrEx>  distrExMASK().Note: Extreme value distribution
-:distrEx>  functionality has been moved to
 :distrEx> 
-:distrEx>        package "RobExtremes". See distrExMOVED().
-:distrEx> 
-:distrEx>  For more information see ?"distrEx", NEWS("distrEx"), as
-:distrEx>  well as
-:distrEx>    http://distr.r-forge.r-project.org/
-:distrEx>  Package "distrDoc" provides a vignette to this package
-:distrEx>  as well as to several related packages; try
-:distrEx>  vignette("distr").
-
 
 Attaching package: 'distrEx'
 
@@ -92,18 +64,11 @@ The following objects are masked from 'package:stats':
 
     IQR, mad, median, var
 
-:distrTeach>  Extensions of Package 'distr' for Teaching
+:distrTeach>  *** Extensions of Package 'distr' for Teaching
 :distrTeach> 
-:distrTeach>  Stochastics/Statistics in Secondary School
-:distrTeach>  (version 2.7.0)
+:distrTeach>  Stochastics/Statistics in Secondary School ***
 :distrTeach> 
-:distrTeach>  For more information see ?"distrTeach",
-:distrTeach>  NEWS("distrTeach"), as well as
-:distrTeach>    http://distr.r-forge.r-project.org/
-:distrTeach>  Package "distrDoc" provides a vignette to this
-:distrTeach>  package as well as to several related packages;
-:distrTeach>  try vignette("distr").
-
+:distrTeach> 
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 > base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
@@ -113,7 +78,6 @@ The following objects are masked from 'package:stats':
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: illustrateCLT
 > ### Title: Functions for Illustrating the CLT
 > ### Aliases: illustrateCLT illustrateCLT.tcl
@@ -131,15 +95,12 @@ The following objects are masked from 'package:stats':
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("IllustCLT", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 > nameEx("IllustLLN")
 > ### * IllustLLN
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: illustrateLLN
 > ### Title: Functions for Illustrating the LLN
 > ### Aliases: illustrateLLN
@@ -157,19 +118,17 @@ The following objects are masked from 'package:stats':
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("IllustLLN", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 > nameEx("plotCLT")
 > ### * plotCLT
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: plotCLT
 > ### Title: Generic Plot Function for Illustrating the CLT
 > ### Aliases: plotCLT plotCLT-methods plotCLT,AbscontDistribution-method
 > ###   plotCLT,DiscreteDistribution-method
+> ###   plotCLT,UnivariateDistribution-method
 > ### Keywords: internal methods hplot distribution
 > 
 > ### ** Examples
@@ -178,14 +137,12 @@ The following objects are masked from 'package:stats':
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("plotCLT", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > ### * <FOOTER>
 > ###
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  10.79 0.7 11.84 NA NA 
+Time elapsed:  7.67 0.61 8.32 NA NA 
 > grDevices::dev.off()
 null device 
           1 
