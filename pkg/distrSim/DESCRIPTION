@@ -7,7 +7,7 @@ Description: S4-classes for setting up a coherent framework for simulation withi
 Depends: R(>= 3.4), methods, graphics, setRNG(>= 2006.2-1), distr(>= 2.5.2)
 Suggests: distrEx(>= 2.2)
 Enhances: distrTEst
-Imports: startupmsg, stats, grDevices
+Imports: startupmsg(>= 1.0.0), stats, grDevices
 Authors@R: c(person("Florian", "Camphausen", role="ctb", comment="contributed as student in
             the initial phase --2005"), person("Matthias", "Kohl", role=c("aut", "cph")),
             person("Peter", "Ruckdeschel", role=c("cre", "cph"),
