@@ -1,0 +1,59 @@
+------------------------------------------------------------------
+MikTeX-Problem mit R
+------------------------------------------------------------------
+
++ Es gibt wiederholt Probleme bei 
+  
+  R CMD check <pkg>_<version>.tar.gz
+  
+  Genauer sieht man Fehler vom Typ
+l.234 \inputencoding
+                    {utf8}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+* checking PDF version of manual without index ... ERROR
+
++ Dieser Fehler kommt zustande, weil in der aus den Beispielen erzeugten TeX-Datei
+  folgende Zeile fehlt:
+      \\usepackage[utf8]{inputenc}
+  und daher der Befehl \inputencoding unbekannt ist
+  
++ Genauer nutzt   
+    R CMD check 
+  die R-Funktion in Paket tools
+     check_pkg_manual()  (ab Zeile 5387 in File check.R)
+
++ diese wiederum benutzt _ohne_ encoding Angaben
+    R CMD Rd2pdf   (ll 5403-5407)
+
++ das wiederum nutzt die R-Funktion in Paket tools
+    ..Rd2pdf() (ab Zeile 709 in File Rd2pdf.R)  
+	   und ruft ab Zeile 903 mit Argument enc (= "unknown")
+	   und outenc (= "UTF-8")
+	   .Rd2pdf(files[1L], file.path(build_dir, "Rd2.tex"),
+                    title, quiet, description, only_meta,
+                    enc, outenc, dir, OSdir, internals, index,
+                    pkglist)
+       auf					
+
++  .Rd2pdf wiederum (ab Zeile 540) fügt ab Zeile 576
+      ins TeX-File ein:  
+     \makeatletter\@ifl@t@r\fmtversion{2018/04/01}{}{\usepackage[utf8]{inputenc}}\makeatother
+      => bei neuen TeX-Versionen wird also /nicht/ \usepackage[utf8]{inputenc} eingefügt
+	  
++  Dafür wesentlich: die logische Variable /Zeile 573
+           asUTF8 <- latex_outputEncoding == "utf8"  
+   ist "TRUE"
+
++  Aber ab Zeile 641 schreibt der Code            
+   writeLines(c(
+                "\\Rdcontents{Contents}",
+                if (!asUTF8) paste0("\\inputencoding{", latex_outputEncoding, "}")
+            ), out)
+
+	ins TeX-File 
+	\Rdcontents{Contents}
+    \inputencoding{utf8}
+
+=> zwischen 576 und 641 muss asUTF8 geändert worden sein   	  
+	   

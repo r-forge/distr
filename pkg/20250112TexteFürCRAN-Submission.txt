@@ -1,0 +1,61 @@
+2025-01-10 r87562 ucrt
+
+This release fixes an issue with our start-up messages. 
+
+In the prior regime, suppose we had pkgs pkgA and pkgB on CRAN, pkgB importing the NAMESPACE of pkgA via depends, and both pkgs pkgA and pkgB had startup messages managed by pkg startupmsg including version information, and pkgB used the reference output <pkgB>-Ex.Rout.save as a unit test for pkgB. 
+
+Then, whenever we submitted an updated version of pkgA to CRAN, this resulted in changes in the reference output of pkgB which were issued on loading pkgB: As pkgB depends on pkgA it loads the namespace of pkgA which issues the start-up message of pkgA including, up to version 1.0.0, version information of pkgA. As we use the reference output of pkgB as a test, this produced NOTES at CRAN checks which cannot be caught through 
+## IGNORE_RDIFF_BEGIN
+## IGNORE_RDIFF_END
+because it happens in the automatically inserted code line  
+library('<pkgB>')
+
+To avoid this, by default our startup messages now no longer issue version information of the attached packages. Instead, --only once per session-- we show a startup message indicating how to show the prior behaviour, i.e., show the version information of attached packages in the startup messages.
+
+Our submission has been checked against R-devel r87562 without any errors nore notes.
+
+Please note that this submission will entail (but only once!) the subsequent submission of revised versions of all pkg's of the distrXXX and robastXXX families of pkg's in due course, i.e., distr, distrEx, distrSim, distrTEst, distrRmetrics, distrTeach,distrEllipse, distrDoc, RandVar, distrMod, RobAStBase, ROptEst, RobAStRDA, RobExtremes, RobLox, RobLoxBioC, RobRex, ROptRegTS.
+
+This release fixes the TeX encoding issue in vignette "newDistributions-knitr.Rnw" behind the current problems mentioned on <https://cran.r-project.org/web/checks/check_results_distr.html>.
+The release depends on pkg startupmsg version >= 1.0.0, just submitted to CRAN.
+
+In the prior regime, suppose we had pkgs pkgA and pkgB on CRAN, pkgB importing the NAMESPACE of pkgA via depends, and both pkgs pkgA and pkgB had startup messages managed by pkg startupmsg including version information, and pkgB used the reference output <pkgB>-Ex.Rout.save as a unit test for pkgB. 
+
+Then, whenever we submitted an updated version of pkgA to CRAN, this resulted in changes in the reference output of pkgB which were issued on loading pkgB: As pkgB depends on pkgA it loads the namespace of pkgA which issues the start-up message of pkgA including, up to version 1.0.0, version information of pkgA. As we use the reference output of pkgB as a test, this produced NOTES at CRAN checks which cannot be caught through 
+## IGNORE_RDIFF_BEGIN
+## IGNORE_RDIFF_END
+because it happens in the automatically inserted code line  
+library('<pkgB>')
+
+To avoid this, by default our startup messages now no longer issue version information of the attached packages. Instead, --only once per session-- we show a startup message indicating how to show the prior behaviour, i.e., show the version information of attached packages in the startup messages.
+
+Our submission has been checked against R-devel r87562 without any errors nore notes.
+
+Please note that this submission will entail (but only once!) the subsequent submission of revised versions of all pkg's of the distrXXX and robastXXX families of pkg's in due course, i.e., distr, distrEx, distrSim, distrTEst, distrRmetrics, distrTeach,distrEllipse, distrDoc, RandVar, distrMod, RobAStBase, ROptEst, RobAStRDA, RobExtremes, RobLox, RobLoxBioC, RobRex, ROptRegTS.
+
+
+
+==========
+startupmsg
+distr
+distrEx
+distrSim
+distrTEst
+distrTeach
+distrRmetrics
+distrEllipse
+distrDoc
+distrMod
+RandVar
+RobAStBase, 
+ROptEst, 
+RobAStRDA, 
+RobExtremes, 
+RobLox, 
+RobLoxBioC, 
+RobRex, 
+ROptRegTS
+
+16.11.
+09.12.
+10.01.
