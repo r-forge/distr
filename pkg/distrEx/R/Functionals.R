@@ -76,7 +76,17 @@ setMethod("var", signature(x = "CompoundDistribution"),
        S <- x@SummandsDistr
        N <- x@NumbOfSummandsDistr
        if(is(S,"UnivariateDistribution")){
-         return(E(N)*var(S, ...)+ (var(S, ...)+E(S, ...)^2)*var(N))
+         en <- E(N)
+         vn <- var(N)
+         es <- E(S, ...)
+         vs <- var(S, ...)         
+          ## wrong:  (corrected 20250506)
+          ## E(N)*var(S, ...)+ (var(S, ...)+E(S, ...)^2)*var(N));
+          ## this is correct:
+          ## Var(CN) = E(Var(sum.{i=1}^N} S.i | N)) + Var(E(sum.{i=1}^N} S.i | N)) =
+          ##         = E[N Var(S)] + Var[N E(S)] =
+          ##         = E(N) Var(S) + Var(N) E(S)^2
+         return(en * vs + es^2 * vn)
        }
        else  return(var(simplifyD(x),...))
     }})

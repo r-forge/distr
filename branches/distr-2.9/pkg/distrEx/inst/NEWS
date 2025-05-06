@@ -8,6 +8,14 @@
  information)
 
 ##############
+v 2.9.7
+##############
+
+bug fix:
++ found a glitch in var-method for compound distributions 
+  (see comments in file Functionals.R for details)
+  
+##############
 v 2.9.6
 ##############
 
