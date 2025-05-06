@@ -1,0 +1,36 @@
+    ## Check S3 generics and methods consistency.
+
+     ## Unfortunately, what is an S3 method is not clear.
+     ## These days, S3 methods for a generic GEN are found
+     ## A. via GEN.CLS lookup from the callenv to its topenv;
+     ## B. the S3 registry;
+     ## C. GEN.CLS lookup from the parent of the topenv to baseenv,
+     ##    skipping everything on the search path between globalenv and
+     ##    baseenv.
+     ## Thus if "package code" calls GEN, we first look in the package
+     ## namespace itself, then in the registry, and then in the package
+     ## imports and .BaseNamespaceEnv (and globalenv and baseenv again).
+     ##
+     ## Clearly, everything registered via S3method() should be an S3
+     ## method.  Interestingly, we seem to have some registrations for
+     ## non-generics, such as grDevices::axis().  These are "harmless"
+     ## but likely not "as intended", and hence inconsistencies are not
+     ## ignored.
+     ##
+     ## If the package namespace has a function named GEN.CLS, it is used
+     ## as an S3 method for an S3 generic named GEN (and hence "is an S3
+     ## method") only if the package code actually calls GEN (see A
+     ## above).  So one could argue that we should not be looking at all
+     ## GEN.CLS matches with GEN a generic in the package itself, its
+     ## imports or base, but restrict to only the ones where the package
+     ## code calls GEN.  Doable, but not straightforward (calls could be
+     ## PKG::GEN) and possibly quite time consuming.  For generics from
+     ## the package itself or its imports, not restricting should not
+     ## make a difference (why define or import when not calling?), but
+     ## for generics from base it may: hence we filter out the mismatches
+     ## for base GEN not called in the package.
+     ##
+     ## If a package provides an S3 generic GEN, there is no need to
+     ## register GEN.CLS functions for "internal use" (see above).
+     ## However, if GEN is exported then likely all GEN.CLS functions
+     ## should be registered as S3 methods.

@@ -1,0 +1,91 @@
+## -----------------------------------------------------------------
+## UTF-8 encoding issue with R CMD check with install-args="--latex"
+## -----------------------------------------------------------------
+## Peter Ruckdeschel, Oldenburg University
+## -----------------------------------------------------------------
+# peter.ruckdeschel@uol.de, peter.ruckdeschel@web.de
+# 2025-01-16
+## -----------------------------------------------------------------
+
+This reports first insights into the error thrown at
+
+R CMD check --install-args="--latex" <pkg>\_<version>.tar.gz  
+  
+Seen error message:  
+  
+===
+* checking PDF version of manual ... WARNING
+LaTeX errors when creating PDF version.
+This typically indicates Rd problems.
+LaTeX errors found:
+! Undefined control sequence.
+l.37 \inputencoding
+                   {utf8}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+===
+
+Digging deeper into it, I find that     
+
+    tools:::.Rd2pdf() 
+
+starting in code line 576 of Rd2pdf.R inserts the following line 
+into the TeX file of the manual
+
+    \makeatletter\@ifl@t@r\fmtversion{2018/04/01}{}{\usepackage[utf8]{inputenc}}\makeatother
+
+[and this is the only location in the R code of pkg tools where such a string is written.]
+I.e., in recent TeX-versions the following line is _not_ inserted to the TeX file of the manual
+
+    \usepackage[utf8]{inputenc}
+
+and consequently (as the alternatives to inputenc are not reached either in my case) pdfLaTeX will
+not know command \inputencoding which causes the error described above.
+
+We also note that line 576 is only reached (in if clauses) if logical variable asUTF8 is TRUE.
+However, the code of tools:::.Rd2pdf starting from line 641 in file Rd2pdf.R writes the lines
+
+    \Rdcontents{Contents}
+    \inputencoding{utf8}
+
+into the TeX file of the manual, [and againg, this is the only location in the R code of pkg tools where
+such strings are written.] Of these two lines the latter is only reached if asUTF is FALSE.
+
+So I suppose option --install-args="--latex" somehow interferes with this so that asUTF inbetween
+lines 576 and 641 gets changed, but I have not been able to identify where and how this could
+happen.
+
+=============================================================================
+> sessionInfo()
+R Under development (unstable) (2025-01-10 r87562 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 11 x64 (build 26100)
+
+Matrix products: default
+  LAPACK version 3.12.0
+
+locale:
+[1] LC_COLLATE=German_Germany.utf8  LC_CTYPE=German_Germany.utf8   
+[3] LC_MONETARY=German_Germany.utf8 LC_NUMERIC=C                   
+[5] LC_TIME=German_Germany.utf8    
+
+time zone: Europe/Berlin
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+ [1] utf8_1.2.4       R6_2.5.1         magrittr_2.0.3   gtable_0.3.5    
+ [5] glue_1.7.0       tibble_3.2.1     pkgconfig_2.0.3  lifecycle_1.0.4
+ [9] ggplot2_3.5.1    cli_3.6.3        fansi_1.0.6      scales_1.3.0    
+[13] grid_4.5.0       vctrs_0.6.5      compiler_4.5.0   munsell_0.5.1   
+[17] pillar_1.9.0     colorspace_2.1-1 rlang_1.1.4  
+
+=============================================================================
+As to MikTeX, see:This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) 
+(preloaded format=pdflatex 2025.1.11)  11 JAN 2025 20:25
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+=============================================================================
