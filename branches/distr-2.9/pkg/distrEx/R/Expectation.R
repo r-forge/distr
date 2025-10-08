@@ -730,7 +730,7 @@ setMethod("E", signature(object = "Gammad",
         return(ret.v)
     }else{
       mc <- match.call()
-      res <- E(object, fun = function(x)1, low=low, upp=upp, ..., diagnostic = diagnostic)
+      res <- E(object, fun = function(x)x, low=low, upp=upp, ..., diagnostic = diagnostic)
 
       if(diagnostic){
          diagn <- attr(res, "diagnostic")
