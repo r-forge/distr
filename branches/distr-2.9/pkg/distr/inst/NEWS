@@ -8,6 +8,14 @@
  information)
  
 ##############
+v 2.9.8
+##############
++ in vignette newDistributions-knitr.Rnw
+  dropped option pagecolor in hyperref (no longer available) 
+  replaced URI svn+ssh://ruckdeschel@svn.r-forge.r-project.org/svnroot/distr/pkg/distr/vignettes/newDistributions-knitr.Rnw
+  by R-Forge Source: \RForgeVignetteURL\\[1.2ex]
+
+##############
 v 2.9.7 
 ##############
 under the hood:

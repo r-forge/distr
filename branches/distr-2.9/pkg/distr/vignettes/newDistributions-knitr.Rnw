@@ -29,6 +29,8 @@
 % 'HeadURL LastChangedDate LastChangedRevision LastChangedBy' or
 % 'Id' or both depending if you use \svnidlong and/or \svnid
 %
+\xdef\RforgeURL{https://r-forge.r-project.org/scm/viewvc.php/pkg/distr/vignettes/newDistributions-knitr.Rnw?root=distr&revision=\svnfilerev}
+\newcommand{\RForgeVignetteURL}{\url{\RforgeURL}}%
 \newcommand{\svnfooter}{Last Changed Rev: \svnkw{LastChangedRevision}}
 \svnRegisterAuthor{ruckdeschel}{Peter Ruckdeschel}
 \svnRegisterAuthor{stamats}{Matthias Kohl}
@@ -58,7 +60,8 @@ pdfauthor={Peter Ruckdeschel, Matthias Kohl},%
 pdfsubject={distr},%
 pdfkeywords={probability distribution,simulation,estimation},%
 pagebackref,bookmarks,colorlinks,linkcolor=darkblue,citecolor=darkblue,%
-pagecolor=darkblue,raiselinks,plainpages,pdftex]{hyperref}
+%pagecolor=darkblue,
+raiselinks,plainpages,pdftex]{hyperref}
 %
 \markboth{\sl How to generate new distributions in packages ``{\tt distr}'', ``{\tt distrEx}''}%
 {\sl How to generate new distributions in packages ``{\tt distr}'', ``{\tt distrEx}''}
@@ -146,7 +149,8 @@ opts_chunk$set(tidy=FALSE)
 \begin{tabbing}
 \footnotesize\sffamily
  Last changes revision: \= \kill
- Head URL: \> \parbox[t]{6cm}{\url{\svnkw{HeadURL}}}\\[1.2ex]
+ R-Forge Source:\> \parbox[t]{6cm}{\RForgeVignetteURL}\\[1.2ex]
+% Head URL: \> \parbox[t]{6cm}{\url{\svnkw{HeadURL}}}\\[1.2ex]
  Last changed date: \> \svndate\\
  Last changes revision: \> \svnrev\\
  Version: \> \svnFullRevision*{\svnrev}\\
